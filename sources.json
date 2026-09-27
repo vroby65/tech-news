@@ -1,0 +1,15 @@
+{
+  "feeds": [
+    {"name":"Hacker News","url":"https://hnrss.org/frontpage"},
+    {"name":"Ars Technica","url":"https://feeds.arstechnica.com/arstechnica/index"},
+    {"name":"TechCrunch","url":"https://techcrunch.com/feed/"},
+    {"name":"The Verge","url":"https://www.theverge.com/rss/index.xml"},
+    {"name":"Phoronix","url":"https://www.phoronix.com/rss.php"},
+    {"name":"LWN","url":"https://lwn.net/headlines/rss"},
+    {"name":"OpenAI News","url":"https://openai.com/news/rss.xml"},
+    {"name":"Google AI Blog","url":"https://blog.google/technology/ai/rss/"}
+  ],
+  "max_items_per_feed": 8,
+  "max_total_items": 35,
+  "lookback_hours": 30
+}
