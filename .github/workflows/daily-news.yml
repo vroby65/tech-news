@@ -1,26 +1,23 @@
-name: Build and Publish Tech News
+name: Publish Tech News
 
 on:
   workflow_dispatch:
   push:
     branches: [main]
     paths:
-      - ".github/workflows/daily-news.yml"
-  schedule:
-    - cron: "50 5 * * *"
-      timezone: "Europe/Rome"
+      - "docs/**"
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
 concurrency:
-  group: tech-news
-  cancel-in-progress: false
+  group: pages
+  cancel-in-progress: true
 
 jobs:
-  build-publish:
+  deploy:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -28,33 +25,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-
-      - name: Python
-        uses: actions/setup-python@v6
-        with:
-          python-version: "3.12"
-
-      - name: Dependencies
-        run: pip install -r requirements.txt
-
-      - name: Build edition
-        env:
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-          TZ: Europe/Rome
-        run: python src/build_news.py
-
-      - name: Commit edition
-        run: |
-          git config user.name "tech-news-bot"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/
-          if git diff --cached --quiet; then
-            echo "Nessuna modifica da salvare."
-          else
-            git commit -m "news: $(TZ=Europe/Rome date +'%Y-%m-%d')"
-            git pull --rebase origin main
-            git push origin main
-          fi
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
