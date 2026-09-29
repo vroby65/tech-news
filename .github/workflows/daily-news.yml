@@ -48,7 +48,8 @@ jobs:
             echo "Nessuna modifica da salvare."
           else
             git commit -m "news: $(TZ=Europe/Rome date +'%Y-%m-%d')"
-            git push
+            git pull --rebase origin main
+            git push origin main
           fi
 
       - name: Configure Pages
