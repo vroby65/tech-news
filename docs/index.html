@@ -3,117 +3,76 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Tech News Daily</title>
+<title>Tech News Daily — 29 settembre 2026</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <style>
-:root { color-scheme: light dark; }
-body { margin:0; font:17px/1.6 system-ui,sans-serif; background:#111; color:#eee; }
-main { max-width:900px; margin:auto; padding:32px 20px 64px; }
-header { border-bottom:1px solid #444; margin-bottom:28px; }
-h1 { font-size:clamp(2rem,7vw,4rem); margin:.1em 0; }
-.site-title { display:flex; align-items:center; gap:.28em; }
-.site-title img { width:.95em; height:.95em; border-radius:.22em; object-fit:cover; flex:none; }
-h2 { margin-top:2em; }
-h3 { margin:1.6em 0 .3em; }
-a { color:#7cc4ff; }
-.meta { color:#aaa; }
-.card { background:#181818; border:1px solid #333; border-radius:16px; padding:20px 24px; }
-.news-img { display:block; max-width:100%; max-height:460px; width:auto; margin:.7em auto 1.1em; border-radius:14px; }
-.archive { margin-top:48px; border-top:1px solid #444; padding-top:24px; }
-.archive a { margin-right:14px; white-space:nowrap; }
-footer { color:#888; margin-top:48px; font-size:.9rem; }
+:root{color-scheme:light dark}
+body{margin:0;font:17px/1.6 system-ui,sans-serif;background:#111;color:#eee}
+main{max-width:900px;margin:auto;padding:32px 20px 64px}
+header{border-bottom:1px solid #444;margin-bottom:28px}
+h1{font-size:clamp(2rem,7vw,4rem);margin:.1em 0}
+.site-title{display:flex;align-items:center;gap:.28em}
+.site-title img{width:.95em;height:.95em;border-radius:.22em;object-fit:cover;flex:none}
+h2{margin-top:1.8em}
+a{color:#7cc4ff}
+.meta{color:#aaa}
+.card{background:#181818;border:1px solid #333;border-radius:16px;padding:20px 24px}
+.archive{margin-top:48px;border-top:1px solid #444;padding-top:24px}
+.archive a{margin-right:14px;white-space:nowrap}
+footer{color:#888;margin-top:48px;font-size:.9rem}
 </style>
 </head>
 <body><main>
-<header><div class="meta">Rassegna automatica · 29/09/2026</div>
+<header>
+<div class="meta">Recap ChatGPT delle 06:00 · 29/09/2026</div>
 <h1 class="site-title"><img src="favicon.png" alt="">Tech News Daily</h1>
-<p>AI, Linux, open source, sviluppo, hardware, sicurezza e strumenti.</p>
+<p>AI, Linux, open source, sviluppo software e sicurezza.</p>
 </header>
-<article class="card"><h2>In breve</h2>
+<article class="card">
+<h1>Recap tech — 29 settembre 2026</h1>
+
+<p>Sul fronte dei grandi modelli AI, non emerge una nuova major release ufficiale di OpenAI, Anthropic, Google DeepMind o DeepSeek nelle ultime 24 ore: oggi è meglio non riciclare annunci precedenti.</p>
+
+<h2>1. Flatpak 1.18.4: aggiornamento di sicurezza da installare</h2>
+<p>Corregge sei vulnerabilità; le più importanti possono permettere a un'app malevola di cancellare o svuotare file arbitrari dell'host. Conviene aggiornare a 1.18.4 appena disponibile.</p>
+<p><a href="https://www.phoronix.com/news/Flatpak-1.18.4-Released" target="_blank" rel="noopener">Fonte: Phoronix</a></p>
+
+<h2>2. Firefox 157: arriva Nova, il maggiore restyling da anni</h2>
+<p>Introduce il tema Nova con interfaccia più arrotondata, modalità compatta, decodifica hardware AV1 per WebRTC e avviso SSLKEYLOGFILE.</p>
+<p><a href="https://www.omgubuntu.co.uk/2026/09/firefox-157-released-nova-theme" target="_blank" rel="noopener">Fonte: OMG! Ubuntu</a></p>
+
+<h2>3. Git 2.56: conflitti più sicuri e manutenzione più scalabile</h2>
+<p>Aggiunge staging dedicato dei file già risolti, nuovi comandi di maintenance e ottimizzazioni per grandi repository.</p>
+<p><a href="https://github.blog/open-source/git/highlights-from-git-2-56/" target="_blank" rel="noopener">Fonte: GitHub Blog</a></p>
+
+<h2>4. Valve abilita la code cache FEX in Proton Experimental ARM</h2>
+<p>La code cache evita di ricompilare continuamente lo stesso codice tradotto x86→ARM64, riducendo stutter e migliorando soprattutto gli 1% low nelle esecuzioni successive.</p>
+<p><a href="https://www.gamingonlinux.com/2026/09/fex-code-cache-enabled-for-proton-experimental-arm-to-improve-frame-timings/" target="_blank" rel="noopener">Fonte: GamingOnLinux</a></p>
+
+<h2>5. F-Droid 2.0: il maggiore rifacimento del client in un decennio</h2>
+<p>Riscrive l'interfaccia in Kotlin + Jetpack Compose; migliora ricerca e categorie, consente download/aggiornamenti contemporanei e segnala problemi come cambiamenti della chiave di firma.</p>
+<p><a href="https://f-droid.org/packages/org.fdroid.basic/" target="_blank" rel="noopener">Fonte: F-Droid</a></p>
+
+<h2>6. Shotcut 26.9: audio ducking automatico e FFmpeg 9</h2>
+<p>Aggiunge Automatic Audio Ducking, controlli volume e meter nelle intestazioni delle tracce, Adjustment Clips e pipeline audio a 32-bit float; passa a FFmpeg 9.0 e corregge su Linux VA-API HEVC e progetti su CIFS/SMB.</p>
+<p><a href="https://www.phoronix.com/news/Shotcut-26.9" target="_blank" rel="noopener">Fonte: Phoronix</a></p>
+
+<h2>7. openSUSE Leap 16.1 RC aggiunge una modalità immutabile</h2>
+<p>La release candidate introduce una nuova modalità immutabile opzionale, offrendo nel medesimo ecosistema Leap sia il modello tradizionale sia un sistema base più controllato e resistente alle modifiche accidentali.</p>
+<p><a href="https://www.phoronix.com/news/openSUSE-Leap-16.1-RC" target="_blank" rel="noopener">Fonte: Phoronix</a></p>
+
+<h2>8. Linux 7.4: nuovo “steal governor” per le macchine virtuali</h2>
+<p>Usa il tempo “rubato” dall’hypervisor, quando una vCPU vorrebbe lavorare ma l’host esegue altro, per adattare meglio il comportamento del guest.</p>
+<p><a href="https://www.phoronix.com/news/Linux-7.4-Land-Steal-Governor" target="_blank" rel="noopener">Fonte: Phoronix</a></p>
+
+<h2>Da tenere d'occhio</h2>
 <ul>
-<li>- Ex-Tesla team raises $12.5M to put supply chains on autopilot</li>
-<li>- Using any C++ library in Godot</li>
-<li>- Firebase SDK is CRASHING ALLLL iOS Apps, since today morning</li>
-<li>- Uncensored and Offensive Security AI Models Benchmark</li>
-<li>- Anthropic’s prospectus details losses, growth, and, yes, a warning that its AI could end humanity</li>
+<li>Flatpak 1.18.4</li>
+<li>FEX + Proton ARM</li>
+<li>F-Droid 2.0</li>
+<li>Linux 7.4 e virtualizzazione (steal governor)</li>
 </ul>
-<h2>Notizie del giorno</h2>
-<h3>Ex-Tesla team raises $12.5M to put supply chains on autopilot</h3>
-<img class="news-img" src="https://techcrunch.com/wp-content/uploads/2026/09/atomic-founders.jpg?resize=1200,900" alt="immagine" loading="lazy">
-<p>Atomic&#x27;s agentic supply chain software is now being used by companies like DoorDash and HelloFresh.</p>
-<p><a href="https://techcrunch.com/2026/09/29/ex-tesla-team-raises-12-5m-to-put-supply-chains-on-autopilot/" target="_blank" rel="noopener">Fonte: TechCrunch</a></p>
-<h3>Using any C++ library in Godot</h3>
-<p>Article URL: https://blog.conan.io/cpp/conan/gamedev/godot/cmake/2026/09/29/Using-Any-Cpp-Library-In-Godot.html Comments URL: https://news.ycombinator.com/item?id=49890051 Points: 17 # Comments: 3</p>
-<p><a href="https://blog.conan.io/cpp/conan/gamedev/godot/cmake/2026/09/29/Using-Any-Cpp-Library-In-Godot.html" target="_blank" rel="noopener">Fonte: Hacker News</a></p>
-<h3>Firebase SDK is CRASHING ALLLL iOS Apps, since today morning</h3>
-<img class="news-img" src="https://pbs.twimg.com/media/HTXXyoJWgAAPWlb?format=webp&amp;name=large" alt="immagine" loading="lazy">
-<p>Article URL: https://twitter.com/GergelyOrosz/status/2104825886922911981 Comments URL: https://news.ycombinator.com/item?id=49889934 Points: 33 # Comments: 12</p>
-<p><a href="https://twitter.com/GergelyOrosz/status/2104825886922911981" target="_blank" rel="noopener">Fonte: Hacker News</a></p>
-<h3>Uncensored and Offensive Security AI Models Benchmark</h3>
-<img class="news-img" src="https://opengraph.githubassets.com/c638cfd6b6d2f1b19bd54ec847474d6ca66b0d2e6fa6425069af0591a1a14441/JoasASantos/Offensive-Security-AI-Models" alt="immagine" loading="lazy">
-<p>Article URL: https://github.com/JoasASantos/Offensive-Security-AI-Models Comments URL: https://news.ycombinator.com/item?id=49888937 Points: 14 # Comments: 4</p>
-<p><a href="https://github.com/JoasASantos/Offensive-Security-AI-Models" target="_blank" rel="noopener">Fonte: Hacker News</a></p>
-<h3>Anthropic’s prospectus details losses, growth, and, yes, a warning that its AI could end humanity</h3>
-<img class="news-img" src="https://techcrunch.com/wp-content/uploads/2024/12/GettyImages-1399936043.jpg?resize=1200,675" alt="immagine" loading="lazy">
-<p>In its prospectus, Anthropic just told investors it&#x27;s losing tens of billions of dollars a year, but also growing like crazy, and — oh yeah — its own AI might pose an existential risk to humanity.</p>
-<p><a href="https://techcrunch.com/2026/09/28/anthropics-prospectus-details-losses-growth-and-yes-a-warning-that-its-ai-could-end-humanity/" target="_blank" rel="noopener">Fonte: TechCrunch</a></p>
-<h3>Nothing’s new flagship Headphone 1 Pro put you in the studio</h3>
-<img class="news-img" src="https://platform.theverge.com/wp-content/uploads/sites/2/2026/09/268785_Nothing_pro_1_headphones_JHIGGINS_1.jpg?quality=90&amp;strip=all&amp;crop=0%2C19.842110998298%2C100%2C78.534031413613&amp;w=1200" alt="immagine" loading="lazy">
-<p>Nothing has been on a bit of an audio tear this year, releasing the solid Headphone A and the surprisingly good Ear 3A earbuds. The Headphone A released at $199, while the earbuds are under $100, leaving room for something fancier. That something is the Nothing Headphone 1 Pro, the company&#x27;s new $399 flagship over-ears […]</p>
-<p><a href="https://www.theverge.com/tech/1001797/nothings-headphone-1-pro-review" target="_blank" rel="noopener">Fonte: The Verge</a></p>
-<h3>Tank Body Problem</h3>
-<p>Article URL: http://www.jimsitu.com Comments URL: https://news.ycombinator.com/item?id=49886482 Points: 109 # Comments: 24</p>
-<p><a href="http://www.jimsitu.com" target="_blank" rel="noopener">Fonte: Hacker News</a></p>
-<h3>&quot;Shiva&quot; Being Developed For Mesa Vulkan Drivers, Akin To Gallium3D</h3>
-<img class="news-img" src="https://www.phoronix.net/image.php?id=2026&amp;image=mesa_shiva_1" alt="immagine" loading="lazy">
-<p>Shiva is entering development for Mesa Vulkan drivers as a new framework akin to Gallium3D but for Vulkan drivers rather than OpenGL. It&#x27;s going to be some time before the work will come to fruition but should hopefully lead to more code sharing and a better Mesa Vulkan driver development experience in the future...</p>
-<p><a href="https://www.phoronix.com/news/Mesa-Shiva-For-Vulkan" target="_blank" rel="noopener">Fonte: Phoronix</a></p>
-<h3>Peak XV ups Surge seed investment ceiling to $5M, unveils 18-startup cohort</h3>
-<img class="news-img" src="https://techcrunch.com/wp-content/uploads/2026/09/rajan-anandan.jpg?resize=1200,800" alt="immagine" loading="lazy">
-<p>Thirteen of the 18 startups in Peak XV’s latest Surge cohort are targeting global markets, while more than half are based in India.</p>
-<p><a href="https://techcrunch.com/2026/09/28/peak-xv-goes-bigger-at-seed-with-new-surge-cohort-as-series-a-bar-rises/" target="_blank" rel="noopener">Fonte: TechCrunch</a></p>
-<h3>1996 chat room simulator connected to Win95 and System 7 web desktops</h3>
-<img class="news-img" src="https://lolchat.rip/og-5.png" alt="immagine" loading="lazy">
-<p>Article URL: https://lolchat.rip/ Comments URL: https://news.ycombinator.com/item?id=49886195 Points: 110 # Comments: 45</p>
-<p><a href="https://lolchat.rip/" target="_blank" rel="noopener">Fonte: Hacker News</a></p>
-<h3>OpenAI reportedly ditches model over safety concerns</h3>
-<img class="news-img" src="https://techcrunch.com/wp-content/uploads/2026/09/openai-getty.jpg?resize=1200,800" alt="immagine" loading="lazy">
-<p>A top executive at the AI lab told the Wall Street Journal that the model in question had displayed a poor aptitude for following orders.</p>
-<p><a href="https://techcrunch.com/2026/09/28/openai-reportedly-ditches-model-over-safety-concerns/" target="_blank" rel="noopener">Fonte: TechCrunch</a></p>
-<h3>Aurora CFO says 30,000 driverless trucks by 2030 isn’t as far-fetched as it sounds</h3>
-<img class="news-img" src="https://techcrunch.com/wp-content/uploads/2025/05/Aurora-Launch-6-e1746107306339.jpg?resize=1200,886" alt="immagine" loading="lazy">
-<p>Self-driving truck company Aurora laid out an audacious plan for 2030. Its CFO says its targets aren&#x27;t aspirational.</p>
-<p><a href="https://techcrunch.com/2026/09/28/aurora-cfo-says-30000-driverless-trucks-by-2030-isnt-as-far-fetched-as-it-sounds/" target="_blank" rel="noopener">Fonte: TechCrunch</a></p>
-<h3>Show HN: Pac-Bench – How well can models one-shot a Pac-Man game?</h3>
-<p>Benchmarks how well Harness+models can create a Pac-Man game from a single prompt: “Create a Pac-Man game in a single HTML page” Each model gets one shot — no follow-up prompts or fixes. Comments URL: https://news.ycombinator.com/item?id=49885493 Points: 54 # Comments: 37</p>
-<p><a href="https://jonclegg.github.io/pacman-bakeoff/" target="_blank" rel="noopener">Fonte: Hacker News</a></p>
-<h3>Boeing &quot;incredibly excited&quot; to serve as nation&#x27;s only astronaut transportation</h3>
-<img class="news-img" src="https://cdn.arstechnica.net/wp-content/uploads/2024/09/starliner_thrusters1-1152x648.jpg" alt="immagine" loading="lazy">
-<p>&quot;We couldn&#x27;t provide detailed pricing to the CLD suppliers.&quot;</p>
-<p><a href="https://arstechnica.com/space/2026/09/boeing-incredibly-excited-to-serve-as-nations-only-astronaut-transportation/" target="_blank" rel="noopener">Fonte: Ars Technica</a></p>
-<h3>Experts worry about Nvidia&#x27;s AI chip sales in China and influence over Trump</h3>
-<img class="news-img" src="https://cdn.arstechnica.net/wp-content/uploads/2026/09/GettyImages-2296993009-1024x648.jpg" alt="immagine" loading="lazy">
-<p>China is reportedly mulling letting ByteDance, Alibaba buy banned Nvidia chips.</p>
-<p><a href="https://arstechnica.com/tech-policy/2026/09/nvidia-may-sell-more-chips-in-china-as-jensen-huangs-influence-over-trump-grows/" target="_blank" rel="noopener">Fonte: Ars Technica</a></p>
-<h3>AMD is acquiring AI company World Labs in a deal worth more than $8 billion</h3>
-<img class="news-img" src="https://platform.theverge.com/wp-content/uploads/sites/2/2026/09/gettyimages-2279092788.jpg?quality=90&amp;strip=all&amp;crop=0%2C10.723165084465%2C100%2C78.55366983107&amp;w=1200" alt="immagine" loading="lazy">
-<p>AMD announced today that it&#x27;s acquiring World Labs, an AI research lab co-founded by the prominent researcher Dr. Fei-Fei Li, in an all-stock deal worth approximately $8.2 billion. World Labs launched in 2024 and was valued at $1 billion in a matter of months. The startup launched its first commercial product, a world generation model […]</p>
-<p><a href="https://www.theverge.com/tech/1001749/amd-world-labs-ai-acquisition-deal" target="_blank" rel="noopener">Fonte: The Verge</a></p>
-<h3>Source: Inference provider Modal Labs closing in on $750M round at $15.75B valuation</h3>
-<img class="news-img" src="https://techcrunch.com/wp-content/uploads/2023/11/GettyImages-1411834236.jpg?resize=1200,831" alt="immagine" loading="lazy">
-<p>The new financing is expected to more than triples the AI infrastructure startup&#x27;s valuation from just four months ago.</p>
-<p><a href="https://techcrunch.com/2026/09/28/source-inference-provider-modal-labs-closing-in-on-750m-round-at-15-75b-valuation/" target="_blank" rel="noopener">Fonte: TechCrunch</a></p>
-<h3>ESP32S3 cluster running 1.58-bit (BitNet) Language model</h3>
-<img class="news-img" src="https://opengraph.githubassets.com/a8fc064471794d90987e96ff88e1d8bd1080fb662b3f2c7e7797438aaf576373/Low-Zi-Hong/ESP32s3-LLM-Cluster" alt="immagine" loading="lazy">
-<p>Article URL: https://github.com/Low-Zi-Hong/ESP32s3-LLM-Cluster Comments URL: https://news.ycombinator.com/item?id=49884625 Points: 97 # Comments: 19</p>
-<p><a href="https://github.com/Low-Zi-Hong/ESP32s3-LLM-Cluster" target="_blank" rel="noopener">Fonte: Hacker News</a></p>
-<h2>Da tenere d&#x27;occhio</h2>
-<ul>
-<li>- <a href="https://arstechnica.com/space/2026/09/starships-first-orbital-launch-gives-lift-to-spacexs-next-gen-starlinks/" target="_blank" rel="noopener">SpaceX&#x27;s Starship goes orbital, deploying first next-gen Starlinks</a></li>
-<li>- <a href="https://arstechnica.com/ai/2026/09/florida-asks-court-to-put-the-brakes-on-openais-frontier-ai-development/" target="_blank" rel="noopener">Florida invokes extinction fears in legal bid to halt OpenAI development</a></li>
-<li>- <a href="https://techcrunch.com/2026/09/28/amd-will-acquire-fei-fei-lis-world-labs-for-8-2-billion/" target="_blank" rel="noopener">AMD will acquire Fei-Fei Li’s World Labs for $8.2 billion</a></li>
-<li>- <a href="https://arstechnica.com/science/2026/09/new-device-captures-carbon-dioxide-by-pumping-it-across-a-battery/" target="_blank" rel="noopener">New device captures carbon dioxide by pumping it across a battery</a></li>
-</ul></article>
+</article>
 <section class="archive"><h2>Archivio</h2><a href="archive/2026-09-29.html">2026-09-29</a> <a href="archive/2026-09-27.html">2026-09-27</a></section>
-<footer>Generato automaticamente da GitHub Actions. Le fonti originali restano collegate in ogni voce.</footer>
+<footer>Contenuto editoriale: recap ChatGPT delle 06:00. GitHub Actions esegue soltanto la pubblicazione su Pages.</footer>
 </main></body></html>
