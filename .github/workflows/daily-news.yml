@@ -2,6 +2,10 @@ name: Build and Publish Tech News
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/daily-news.yml"
   schedule:
     - cron: "50 5 * * *"
       timezone: "Europe/Rome"
