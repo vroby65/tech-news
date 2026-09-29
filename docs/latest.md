@@ -14,17 +14,17 @@ Atomic's agentic supply chain software is now being used by companies like DoorD
 [Fonte: TechCrunch](https://techcrunch.com/2026/09/29/ex-tesla-team-raises-12-5m-to-put-supply-chains-on-autopilot/)
 
 ### Using any C++ library in Godot
-Article URL: https://blog.conan.io/cpp/conan/gamedev/godot/cmake/2026/09/29/Using-Any-Cpp-Library-In-Godot.html Comments URL: https://news.ycombinator.com/item?id=49890051 Points: 15 # Comments: 3
+Article URL: https://blog.conan.io/cpp/conan/gamedev/godot/cmake/2026/09/29/Using-Any-Cpp-Library-In-Godot.html Comments URL: https://news.ycombinator.com/item?id=49890051 Points: 17 # Comments: 3
 [Fonte: Hacker News](https://blog.conan.io/cpp/conan/gamedev/godot/cmake/2026/09/29/Using-Any-Cpp-Library-In-Godot.html)
 
 ### Firebase SDK is CRASHING ALLLL iOS Apps, since today morning
 ![immagine](https://pbs.twimg.com/media/HTXXyoJWgAAPWlb?format=webp&name=large)
-Article URL: https://twitter.com/GergelyOrosz/status/2104825886922911981 Comments URL: https://news.ycombinator.com/item?id=49889934 Points: 30 # Comments: 9
+Article URL: https://twitter.com/GergelyOrosz/status/2104825886922911981 Comments URL: https://news.ycombinator.com/item?id=49889934 Points: 33 # Comments: 12
 [Fonte: Hacker News](https://twitter.com/GergelyOrosz/status/2104825886922911981)
 
 ### Uncensored and Offensive Security AI Models Benchmark
-![immagine](https://opengraph.githubassets.com/8ec94111df563b227874cfaa58645891a12b066248b52eb284a4978c28d3f7b1/JoasASantos/Offensive-Security-AI-Models)
-Article URL: https://github.com/JoasASantos/Offensive-Security-AI-Models Comments URL: https://news.ycombinator.com/item?id=49888937 Points: 13 # Comments: 4
+![immagine](https://opengraph.githubassets.com/d97b31d8120293c4f36296b35acfe2b5772ac215844045068aac5e3c2e2c3b69/JoasASantos/Offensive-Security-AI-Models)
+Article URL: https://github.com/JoasASantos/Offensive-Security-AI-Models Comments URL: https://news.ycombinator.com/item?id=49888937 Points: 14 # Comments: 4
 [Fonte: Hacker News](https://github.com/JoasASantos/Offensive-Security-AI-Models)
 
 ### Anthropic’s prospectus details losses, growth, and, yes, a warning that its AI could end humanity
@@ -38,7 +38,7 @@ Nothing has been on a bit of an audio tear this year, releasing the solid Headph
 [Fonte: The Verge](https://www.theverge.com/tech/1001797/nothings-headphone-1-pro-review)
 
 ### Tank Body Problem
-Article URL: http://www.jimsitu.com Comments URL: https://news.ycombinator.com/item?id=49886482 Points: 104 # Comments: 22
+Article URL: http://www.jimsitu.com Comments URL: https://news.ycombinator.com/item?id=49886482 Points: 109 # Comments: 24
 [Fonte: Hacker News](http://www.jimsitu.com)
 
 ### "Shiva" Being Developed For Mesa Vulkan Drivers, Akin To Gallium3D
@@ -53,7 +53,7 @@ Thirteen of the 18 startups in Peak XV’s latest Surge cohort are targeting glo
 
 ### 1996 chat room simulator connected to Win95 and System 7 web desktops
 ![immagine](https://lolchat.rip/og-5.png)
-Article URL: https://lolchat.rip/ Comments URL: https://news.ycombinator.com/item?id=49886195 Points: 110 # Comments: 44
+Article URL: https://lolchat.rip/ Comments URL: https://news.ycombinator.com/item?id=49886195 Points: 110 # Comments: 45
 [Fonte: Hacker News](https://lolchat.rip/)
 
 ### OpenAI reportedly ditches model over safety concerns
@@ -67,7 +67,7 @@ Self-driving truck company Aurora laid out an audacious plan for 2030. Its CFO s
 [Fonte: TechCrunch](https://techcrunch.com/2026/09/28/aurora-cfo-says-30000-driverless-trucks-by-2030-isnt-as-far-fetched-as-it-sounds/)
 
 ### Show HN: Pac-Bench – How well can models one-shot a Pac-Man game?
-Benchmarks how well Harness+models can create a Pac-Man game from a single prompt: “Create a Pac-Man game in a single HTML page” Each model gets one shot — no follow-up prompts or fixes. Comments URL: https://news.ycombinator.com/item?id=49885493 Points: 53 # Comments: 37
+Benchmarks how well Harness+models can create a Pac-Man game from a single prompt: “Create a Pac-Man game in a single HTML page” Each model gets one shot — no follow-up prompts or fixes. Comments URL: https://news.ycombinator.com/item?id=49885493 Points: 54 # Comments: 37
 [Fonte: Hacker News](https://jonclegg.github.io/pacman-bakeoff/)
 
 ### Boeing "incredibly excited" to serve as nation's only astronaut transportation
@@ -91,7 +91,7 @@ The new financing is expected to more than triples the AI infrastructure startup
 [Fonte: TechCrunch](https://techcrunch.com/2026/09/28/source-inference-provider-modal-labs-closing-in-on-750m-round-at-15-75b-valuation/)
 
 ### ESP32S3 cluster running 1.58-bit (BitNet) Language model
-![immagine](https://opengraph.githubassets.com/42f2177fd908504bf7488fbe1d238e0ba510124dcdb4db94dd7c5e3b0816c6f4/Low-Zi-Hong/ESP32s3-LLM-Cluster)
+![immagine](https://opengraph.githubassets.com/a8fc064471794d90987e96ff88e1d8bd1080fb662b3f2c7e7797438aaf576373/Low-Zi-Hong/ESP32s3-LLM-Cluster)
 Article URL: https://github.com/Low-Zi-Hong/ESP32s3-LLM-Cluster Comments URL: https://news.ycombinator.com/item?id=49884625 Points: 97 # Comments: 19
 [Fonte: Hacker News](https://github.com/Low-Zi-Hong/ESP32s3-LLM-Cluster)
 
