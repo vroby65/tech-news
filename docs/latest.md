@@ -23,7 +23,7 @@ Article URL: https://twitter.com/GergelyOrosz/status/2104825886922911981 Comment
 [Fonte: Hacker News](https://twitter.com/GergelyOrosz/status/2104825886922911981)
 
 ### Uncensored and Offensive Security AI Models Benchmark
-![immagine](https://opengraph.githubassets.com/d97b31d8120293c4f36296b35acfe2b5772ac215844045068aac5e3c2e2c3b69/JoasASantos/Offensive-Security-AI-Models)
+![immagine](https://opengraph.githubassets.com/c638cfd6b6d2f1b19bd54ec847474d6ca66b0d2e6fa6425069af0591a1a14441/JoasASantos/Offensive-Security-AI-Models)
 Article URL: https://github.com/JoasASantos/Offensive-Security-AI-Models Comments URL: https://news.ycombinator.com/item?id=49888937 Points: 14 # Comments: 4
 [Fonte: Hacker News](https://github.com/JoasASantos/Offensive-Security-AI-Models)
 
