@@ -5,10 +5,10 @@ on:
   push:
     branches: [main]
     paths:
-      - "docs/**"
+      - "docs/archive/**"
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -17,7 +17,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  publish:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -25,6 +25,46 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Promote latest archive to home
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          archives = sorted(Path("docs/archive").glob("*.html"))
+          if not archives:
+              raise SystemExit("Nessun archivio trovato")
+
+          latest = archives[-1]
+          html = latest.read_text(encoding="utf-8")
+
+          # Adatta solo i riferimenti relativi: il contenuto editoriale resta invariato.
+          html = html.replace("../favicon.png", "favicon.png")
+          html = re.sub(
+              r'<nav class="archive">.*?</nav>',
+              f'<nav class="archive"><a href="archive/{latest.name}">Archivio {latest.stem}</a></nav>',
+              html,
+              flags=re.S,
+          )
+
+          Path("docs/index.html").write_text(html, encoding="utf-8")
+          print(f"Promosso {latest} -> docs/index.html")
+          PY
+
+      - name: Commit home page
+        run: |
+          git config user.name "tech-news-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/index.html
+          if git diff --cached --quiet; then
+            echo "Home già aggiornata."
+          else
+            git commit -m "Publish latest ChatGPT recap to home"
+            git push origin main
+          fi
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
