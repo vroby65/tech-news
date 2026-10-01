@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tech News Daily — 1 ottobre 2026</title>
+<link rel="icon" type="image/png" href="../favicon.png">
+<style>
+:root{color-scheme:light dark}
+body{margin:0;font:17px/1.6 system-ui,sans-serif;background:#111;color:#eee}
+main{max-width:900px;margin:auto;padding:32px 20px 64px}
+header{border-bottom:1px solid #444;margin-bottom:28px}
+h1{font-size:clamp(2rem,7vw,4rem);margin:.1em 0}
+.site-title{display:flex;align-items:center;gap:.28em}
+.site-title img{width:.95em;height:.95em;border-radius:.22em;object-fit:cover;flex:none}
+h2{margin-top:.3em}
+a{color:#7cc4ff}
+.meta{color:#aaa}
+.card{background:#181818;border:1px solid #333;border-radius:16px;padding:20px 24px;margin:22px 0}
+hr{border:0;border-top:1px solid #333;margin:26px 0}
+code{background:#222;padding:.12em .35em;border-radius:.3em}
+.archive{margin-top:48px;border-top:1px solid #444;padding-top:24px}
+</style>
+</head><body><main>
+<header>
+<div class="meta">01/10/2026</div>
+<h1 class="site-title"><img src="../favicon.png" alt="">Tech News Daily</h1>
+<p>Recap tech — 1 ottobre 2026</p>
+</header>
+
+<section class="card"><h2>1. Qt 6.12 LTS: cinque anni di manutenzione e più sicurezza</h2>
+<p>Qt 6.12 è disponibile come nuova release LTS. Porta hot reload integrato nel motore QML, Canvas Painter pronto per l'uso in produzione, supporto ufficiale HarmonyOS e numerosi miglioramenti a Qt Quick, WebAssembly e gRPC. Per gli utenti commerciali, Qt sottolinea anche il lavoro sulla conformità al Cyber Resilience Act europeo.</p>
+<p><strong>Perché conta:</strong> è la nuova base di lungo periodo per molte applicazioni desktop ed embedded Qt, con cinque anni di manutenzione.</p>
+<p><a href="https://www.qt.io/blog/qt-6.12-released">Fonte: Qt</a></p></section><hr>
+
+<section class="card"><h2>2. EDG C/C++ Front-End diventa open source dopo oltre 30 anni</h2>
+<p>Edison Design Group ha rilasciato con licenza Apache 2.0 il proprio front-end C/C++, storicamente usato da prodotti come Intel C++ Compiler Classic, NVIDIA CUDA NVCC e Visual Studio IntelliSense. La C++ Alliance diventa la casa non-profit del progetto.</p>
+<p><strong>Perché conta:</strong> un componente compiler maturo e molto compatibile entra finalmente nell'ecosistema open source.</p>
+<p><a href="https://www.phoronix.com/news/EDG-CPP-Open-Sourced">Fonte: Phoronix</a></p></section><hr>
+
+<section class="card"><h2>3. Gitea 28.0: nuova numerazione, audit log e account bot</h2>
+<p>Gitea abbandona la vecchia numerazione 1.x e passa direttamente alla serie 28.0. Tra le novità più interessanti ci sono audit logging, account bot, impersonazione amministrativa e nuove funzioni collaborative.</p>
+<p><strong>Perché conta:</strong> è un aggiornamento importante per chi usa Gitea come alternativa self-hosted a GitHub e GitLab, soprattutto in ambienti amministrati.</p>
+<p><a href="https://linuxiac.com/category/news/">Fonte: Linuxiac</a></p></section><hr>
+
+<section class="card"><h2>4. Audacity 4.0.1: tornano funzioni richieste e arrivano molte correzioni</h2>
+<p>Audacity 4.0.1 ripristina varie funzioni amate della serie 3, tra cui l'esportazione per traccia o etichetta, e migliora compatibilità con i progetti <code>.aup3</code>. Corregge inoltre diversi crash, problemi con nomi file non ASCII, salvataggi falliti e gestione degli effetti realtime.</p>
+<p><strong>Perché conta:</strong> è il primo assestamento importante dopo il grande passaggio di Audacity 4 alla nuova interfaccia Qt.</p>
+<p><a href="https://forum.audacityteam.org/t/audacity-4-0-1-released/154368">Fonte: Audacity</a></p></section><hr>
+
+<section class="card"><h2>5. Linux 7.4 abilita la NPU dei Ryzen AI Max 400 “Gorgon Halo”</h2>
+<p>È arrivata la patch per abilitare la NPU AIE2 Revision 9 dei futuri Ryzen AI Max 400 nel driver AMDXDNA. L'intervento è minimo ma sufficiente a riconoscere l'hardware, e dovrebbe entrare nella finestra di merge di Linux 7.4.</p>
+<p><strong>Perché conta:</strong> Gorgon Halo è una piattaforma molto interessante per Linux e workload AI locali; avere la NPU supportata al lancio evita di lasciare inutilizzata una parte importante del chip.</p>
+<p><a href="https://www.phoronix.com/news/AMD-Gorgon-Halo-NPU-LInux">Fonte: Phoronix</a></p></section><hr>
+
+<section class="card"><h2>6. Valve lavora al foveated rendering open source nel driver Turnip</h2>
+<p>Per Steam Frame, Valve ha contribuito al supporto del foveated rendering nel driver Vulkan open source Turnip per GPU Qualcomm Adreno, sfruttando estensioni Vulkan come <code>VK_EXT_fragment_density_map</code>.</p>
+<p><strong>Perché conta:</strong> renderizzare ad alta qualità solo dove guarda l'utente può ridurre il carico GPU e migliorare prestazioni e consumi nei visori VR.</p>
+<p><a href="https://www.phoronix.com/news/Steam-Frame-Turnip-Foveated">Fonte: Phoronix</a></p></section><hr>
+
+<section class="card"><h2>7. NVIDIA: nuovo richiamo alla sicurezza dei driver GPU</h2>
+<p>Il recap di oggi segnala un nuovo bollettino sicurezza NVIDIA relativo ai driver GPU, con classi di vulnerabilità che possono includere denial of service, escalation dei privilegi, disclosure o alterazione dei dati e, nei casi peggiori, esecuzione di codice.</p>
+<p><strong>Perché conta:</strong> sui sistemi Linux con GPU NVIDIA conviene mantenere il driver aggiornato alla release corretta per il proprio ramo supportato.</p>
+<p><a href="https://www.nvidia.com/en-us/security/">Fonte: NVIDIA Security</a></p></section><hr>
+
+<section class="card"><h2>8. OpenAI: la distillazione dei modelli resta un fronte di sicurezza</h2>
+<p>OpenAI continua a descrivere tentativi coordinati di estrarre capacità da modelli frontier attraverso tecniche di distillazione, non più limitate alla semplice estrazione della chain-of-thought ma estese a pipeline con dati sintetici, pulizia su larga scala e ottimizzazione di preferenze.</p>
+<p><strong>Perché conta:</strong> la distillazione può ridurre enormemente il costo di replica di capacità avanzate, ma può anche trasferirle senza le stesse protezioni e procedure di sicurezza.</p>
+<p><a href="https://cdn.openai.com/pdf/045aa967-ee96-4a09-94ee-3098ddf6db2c/OpenAI-US-House-Select-Cmte-Update-%5B021226%5D.pdf">Fonte: OpenAI</a></p></section><hr>
+
+<section class="card"><h2>9. Anthropic prova a misurare quali lavori fisici sono già esposti ai robot</h2>
+<p>Anthropic propone un “robot exposure index” basato sui compiti che i robot possono svolgere oggi. Secondo l'analisi, i robot possono già coprire una quota rilevante delle attività fisiche, ma spesso solo in ambienti molto controllati e con costi ancora superiori al lavoro umano.</p>
+<p><strong>Perché conta:</strong> il lavoro fisico automatizzabile non coincide con il lavoro davvero sostituibile oggi; costi, ambiente e flessibilità restano determinanti.</p>
+<p><a href="https://www.anthropic.com/research/what-work-can-robots-do">Fonte: Anthropic</a></p></section><hr>
+
+<section class="card"><h2>10. Tcl/Tk 9.1: screen reader, RTL e nuovo toggle switch</h2>
+<p>Tcl/Tk 9.1 aggiunge supporto agli screen reader, supporto iniziale per testo bidirezionale e lingue right-to-left, il nuovo widget <code>ttk::toggleswitch</code> e testo ruotato. Tcl introduce inoltre nuovi comandi per Unicode, timer monotoni e filtraggio delle liste.</p>
+<p><strong>Perché conta:</strong> è un aggiornamento importante per accessibilità e internazionalizzazione di un toolkit ancora molto usato in strumenti tecnici e utility.</p>
+<p><a href="https://linuxiac.com/tcl-tk-9-1-released-with-screen-reader-support-and-rtl-text/">Fonte: Linuxiac</a></p></section><hr>
+
+<section class="card"><h2>Da tenere d'occhio</h2>
+<p><strong>EDG C++ open source</strong> — potrebbe diventare una base interessante per toolchain, analizzatori e IDE.</p>
+<p><strong>Gorgon Halo su Linux</strong> — da seguire non solo per CPU/GPU ma soprattutto per l'utilizzo reale della NPU.</p>
+<p><strong>Turnip + foveated rendering</strong> — lavoro molto interessante per il futuro della VR open source su hardware Qualcomm.</p>
+<p><strong>Robot exposure index</strong> — utile per distinguere capacità teoriche, automazione reale e convenienza economica.</p>
+</section>
+
+<nav class="archive"><a href="../">Pagina corrente</a></nav>
+</main></body></html>
