@@ -1,14 +1,89 @@
 <!doctype html>
-<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Tech News Daily — 30 settembre 2026</title><link rel="icon" type="image/png" href="favicon.png">
-<style>:root{color-scheme:light dark}body{margin:0;font:17px/1.6 system-ui,sans-serif;background:#111;color:#eee}main{max-width:900px;margin:auto;padding:32px 20px 64px}header{border-bottom:1px solid #444;margin-bottom:28px}h1{font-size:clamp(2rem,7vw,4rem);margin:.1em 0}.site-title{display:flex;align-items:center;gap:.28em}.site-title img{width:.95em;height:.95em;border-radius:.22em;object-fit:cover}h2{margin-top:.3em}a{color:#7cc4ff}.meta{color:#aaa}.card{background:#181818;border:1px solid #333;border-radius:16px;padding:20px 24px;margin:22px 0}hr{border:0;border-top:1px solid #333;margin:26px 0}code{background:#222;padding:.12em .35em;border-radius:.3em}.archive{margin-top:48px;border-top:1px solid #444;padding-top:24px}</style></head><body><main>
-<header><div class="meta">30/09/2026</div><h1 class="site-title"><img src="favicon.png" alt="">Tech News Daily</h1><p>Recap tech — 30 settembre 2026</p><p>Le ultime 24 ore portano una novità AI importante, <strong>GPT-6.1 Sol</strong>, ma anche un modello NVIDIA molto particolare per dati tabellari, nuovi passi concreti di Linux su Snapdragon X2 e un avvertimento serio sulle capacità cyber dei modelli open-weight. Sul lato pratico Linux, interessanti anche Archinstall 4.5 e hw-monitor 0.6.</p></header>
-<section class="card"><h2>1. OpenAI GPT-6.1 Sol: quasi Astra, ma molto più economico</h2><p>OpenAI ha presentato <strong>GPT-6.1 Sol</strong>, evoluzione di GPT-6 Sol orientata soprattutto a coding agentico, uso del computer e lavoro professionale. OpenAI la posiziona vicino a GPT-6 Astra sui compiti impegnativi, ma con prezzi API di <strong>$2/M token input, $0,10/M cached input e $10/M output</strong>. È disponibile in API come <code>gpt-6.1-sol</code>, in Codex e ChatGPT Work; non è ancora disponibile nella normale Chat.</p><p><strong>Perché conta:</strong> il punto più interessante è il rapporto capacità/costo. Per agenti che riusano molto contesto, il cached input a $0,10/M può incidere parecchio sul costo totale.</p><p><strong>Da provare:</strong> sì, soprattutto confrontandolo con GPT-6 Sol e Astra sullo stesso task Codex misurando token, tempo e numero di interventi.</p><p><a href="https://openai.com/index/introducing-gpt-6-1-sol/">Fonte: OpenAI</a> · <a href="https://github.blog/changelog/2026-09-29-gpt-6-1-sol-in-github-copilot/">Disponibilità in GitHub Copilot</a></p></section><hr>
-<section class="card"><h2>2. NVIDIA Kumo Tabular: foundation model per tabelle senza training</h2><p>NVIDIA ha pubblicato <strong>Kumo Tabular</strong>, una famiglia open-weight da 28M a 215M parametri per classificazione e regressione su dati tabellari. Riceve righe già etichettate come contesto e predice le nuove righe in un singolo forward pass, senza fine-tuning, ricerca di iperparametri o feature engineering obbligatorio. I pesi sono su Hugging Face e il codice della libreria <code>structured-data-models</code> è pubblico.</p><p>NVIDIA dichiara il primo posto nei benchmark TabArena, BeyondArena, TALENT e ScoringBench; sono risultati del produttore e vanno verificati sui propri dataset. La licenza dei pesi è OpenMDW-1.1 e consente uso commerciale secondo i relativi termini.</p><p><strong>Perché conta:</strong> porta l'approccio “in-context learning” dei LLM in un campo ancora dominato da XGBoost/LightGBM e pipeline dedicate.</p><p><strong>Da provare:</strong> sì, soprattutto su un dataset reale già usato con scikit-learn o XGBoost per avere un confronto concreto.</p><p><a href="https://huggingface.co/blog/nvidia/kumo-tabular">Fonte e benchmark: Hugging Face/NVIDIA</a> · <a href="https://huggingface.co/nvidia/Kumo-Tabular">Pesi</a> · <a href="https://github.com/NVIDIA/structured-data-models">Codice</a></p></section><hr>
-<section class="card"><h2>3. GLM-5.3: Anthropic avverte sulle capacità cyber degli open-weight</h2><p>Anthropic ha pubblicato una valutazione di <strong>GLM-5.3</strong> di Z.ai/Zhipu. Nei propri test il modello ha mostrato capacità avanzate di ricerca e sfruttamento di vulnerabilità, paragonabili in alcuni benchmark a modelli cyber ad accesso ristretto. Anthropic sostiene inoltre che le protezioni del modello open-weight siano relativamente facili da aggirare o rimuovere.</p><p><strong>Attenzione:</strong> è una valutazione pubblicata da Anthropic, concorrente del produttore del modello; i risultati vanno quindi letti come valutazione di Anthropic, non come verifica indipendente.</p><p><strong>Perché conta:</strong> suggerisce che capacità cyber avanzate stanno diventando disponibili anche in modelli open-weight, quindi copiabili e modificabili localmente.</p><p><a href="https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities">Fonte: Anthropic Frontier Red Team</a></p></section><hr>
-<section class="card"><h2>4. Ubuntu 26.10 porta Linux sui primi laptop Snapdragon X2</h2><p>Canonical ha pubblicato nuove immagini sperimentali <strong>Ubuntu 26.10 Snapdragon Concept</strong>. Oltre a migliorare il supporto Snapdragon X1 grazie a Linux 7.3, arrivano i primi laptop X2 supportati: ASUS Zenbook A14/A16, Lenovo Yoga Slim 7 e HP EliteBook X G2q.</p><p>Canonical e Qualcomm stanno lavorando a un'immagine Ubuntu Snapdragon X2 ufficiale, certificata e ottimizzata prevista nel 2027.</p><p><strong>Perché conta:</strong> Snapdragon X2 sta passando rapidamente da hardware “Windows ARM” a piattaforma Linux reale, con kernel, GPU e distribuzione che stanno convergendo.</p><p><strong>Da provare:</strong> solo su hardware compatibile e come test; per ora Canonical la definisce ancora Concept.</p><p><a href="https://www.phoronix.com/news/Ubuntu-26.10-Snapdragon-Concept">Fonte: Phoronix</a></p></section><hr>
-<section class="card"><h2>5. Archinstall 4.5: più ARM64 e kernel real-time</h2><p><strong>Archinstall 4.5</strong> aggiunge direttamente nell'installer i kernel <code>linux-rt</code> e <code>linux-rt-lts</code>. Migliora inoltre AArch64 con supporto GRUB e Limine EFI e gestione corretta dei GUID delle partizioni root ARM64.</p><p>Per Hyprland, Labwc, Niri e Sway l'installer passa inoltre da polkit a <code>systemd-logind</code> per alcune operazioni di sessione.</p><p><strong>Perché conta:</strong> Arch continua a rendere ARM64 meno “secondario” e contemporaneamente semplifica installazioni audio/industrial real-time.</p><p><strong>Da provare:</strong> sì, soprattutto in VM ARM64 o su hardware compatibile.</p><p><a href="https://www.phoronix.com/news/Arch-Linux-Archinstall-4.5">Fonte: Phoronix</a></p></section><hr>
-<section class="card"><h2>6. hw-monitor 0.6: finalmente GPU per processo su Linux</h2><p><strong>hw-monitor 0.6/0.6.1</strong> aggiunge colonne con utilizzo GPU e memoria GPU <strong>per singolo processo</strong> quando il driver DRM lo permette. Sono supportati, tra gli altri, AMDGPU, Intel i915/Xe e Nouveau. Arriva anche una nuova scheda per le applicazioni avviate automaticamente tramite XDG autostart.</p><p><strong>Perché conta:</strong> è una funzione che su Linux spesso richiede strumenti specifici per ogni produttore; averla in un monitor grafico comune è molto più comodo per capire chi sta consumando VRAM o GPU.</p><p><strong>Da provare:</strong> sì. È una delle piccole utility desktop più interessanti della giornata.</p><p><a href="https://www.phoronix.com/news/hw-monitor-0.6">Fonte: Phoronix</a></p></section><hr>
-<section class="card"><h2>7. Dependabot può usare runner personalizzati per singolo repository</h2><p>GitHub permette ora agli amministratori di repository privati e interni di scegliere per <strong>Dependabot</strong> il tipo di runner, una label personalizzata e un runner group. Questo consente di eseguire update di versione e sicurezza su runner self-hosted o GitHub-hosted più grandi, anche quando servono accesso a registry privati o ambienti specializzati.</p><p><strong>Perché conta:</strong> è utile per supply-chain security in infrastrutture che non possono far girare Dependabot nel runner standard pubblico.</p><p><strong>Da approfondire:</strong> sì per repository privati/self-hosted; la funzione non è esposta per repository pubblici.</p><p><a href="https://github.blog/changelog/2026-09-29-repository-custom-runner-settings-for-dependabot/">Fonte: GitHub Changelog</a></p></section><hr>
-<section class="card"><h2>Da tenere d'occhio</h2><p><strong>GPT-6.1 Sol</strong> — oggi è il test più interessante per chi usa Codex: la promessa “quasi Astra a prezzo Sol” va verificata sul costo totale di task reali.</p><p><strong>Kumo Tabular</strong> — modello piccolo e specializzato che potrebbe rendere molto più immediati alcuni lavori su CSV e dataset strutturati senza costruire una pipeline ML completa.</p><p><strong>Snapdragon X2 + Linux</strong> — tra patch kernel, GPU open source e immagini Ubuntu, il 2027 potrebbe essere l'anno in cui ARM64 diventa una scelta desktop Linux normale anche fuori da Apple.</p><p><strong>GLM-5.3</strong> — da seguire sia per le capacità tecniche sia per il problema sicurezza: i modelli open-weight cyber-capable cambiano radicalmente il rapporto tra disponibilità e controlli.</p></section>
-<nav class="archive"><a href="archive/2026-09-30.html">2026-09-30</a> · <a href="archive/2026-09-29.html">2026-09-29</a> · <a href="archive/2026-09-27.html">2026-09-27</a></nav></main></body></html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tech News Daily — 1 ottobre 2026</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+:root{color-scheme:light dark}
+body{margin:0;font:17px/1.6 system-ui,sans-serif;background:#111;color:#eee}
+main{max-width:900px;margin:auto;padding:32px 20px 64px}
+header{border-bottom:1px solid #444;margin-bottom:28px}
+h1{font-size:clamp(2rem,7vw,4rem);margin:.1em 0}
+.site-title{display:flex;align-items:center;gap:.28em}
+.site-title img{width:.95em;height:.95em;border-radius:.22em;object-fit:cover;flex:none}
+h2{margin-top:.3em}
+a{color:#7cc4ff}
+.meta{color:#aaa}
+.card{background:#181818;border:1px solid #333;border-radius:16px;padding:20px 24px;margin:22px 0}
+hr{border:0;border-top:1px solid #333;margin:26px 0}
+code{background:#222;padding:.12em .35em;border-radius:.3em}
+.archive{margin-top:48px;border-top:1px solid #444;padding-top:24px}
+</style>
+</head><body><main>
+<header>
+<div class="meta">01/10/2026</div>
+<h1 class="site-title"><img src="favicon.png" alt="">Tech News Daily</h1>
+<p>Recap tech — 1 ottobre 2026</p>
+</header>
+
+<section class="card"><h2>1. Qt 6.12 LTS: cinque anni di manutenzione e più sicurezza</h2>
+<p>Qt 6.12 è disponibile come nuova release LTS. Porta hot reload integrato nel motore QML, Canvas Painter pronto per l'uso in produzione, supporto ufficiale HarmonyOS e numerosi miglioramenti a Qt Quick, WebAssembly e gRPC. Per gli utenti commerciali, Qt sottolinea anche il lavoro sulla conformità al Cyber Resilience Act europeo.</p>
+<p><strong>Perché conta:</strong> è la nuova base di lungo periodo per molte applicazioni desktop ed embedded Qt, con cinque anni di manutenzione.</p>
+<p><a href="https://www.qt.io/blog/qt-6.12-released">Fonte: Qt</a></p></section><hr>
+
+<section class="card"><h2>2. EDG C/C++ Front-End diventa open source dopo oltre 30 anni</h2>
+<p>Edison Design Group ha rilasciato con licenza Apache 2.0 il proprio front-end C/C++, storicamente usato da prodotti come Intel C++ Compiler Classic, NVIDIA CUDA NVCC e Visual Studio IntelliSense. La C++ Alliance diventa la casa non-profit del progetto.</p>
+<p><strong>Perché conta:</strong> un componente compiler maturo e molto compatibile entra finalmente nell'ecosistema open source.</p>
+<p><a href="https://www.phoronix.com/news/EDG-CPP-Open-Sourced">Fonte: Phoronix</a></p></section><hr>
+
+<section class="card"><h2>3. Gitea 28.0: nuova numerazione, audit log e account bot</h2>
+<p>Gitea abbandona la vecchia numerazione 1.x e passa direttamente alla serie 28.0. Tra le novità più interessanti ci sono audit logging, account bot, impersonazione amministrativa e nuove funzioni collaborative.</p>
+<p><strong>Perché conta:</strong> è un aggiornamento importante per chi usa Gitea come alternativa self-hosted a GitHub e GitLab, soprattutto in ambienti amministrati.</p>
+<p><a href="https://linuxiac.com/category/news/">Fonte: Linuxiac</a></p></section><hr>
+
+<section class="card"><h2>4. Audacity 4.0.1: tornano funzioni richieste e arrivano molte correzioni</h2>
+<p>Audacity 4.0.1 ripristina varie funzioni amate della serie 3, tra cui l'esportazione per traccia o etichetta, e migliora compatibilità con i progetti <code>.aup3</code>. Corregge inoltre diversi crash, problemi con nomi file non ASCII, salvataggi falliti e gestione degli effetti realtime.</p>
+<p><strong>Perché conta:</strong> è il primo assestamento importante dopo il grande passaggio di Audacity 4 alla nuova interfaccia Qt.</p>
+<p><a href="https://forum.audacityteam.org/t/audacity-4-0-1-released/154368">Fonte: Audacity</a></p></section><hr>
+
+<section class="card"><h2>5. Linux 7.4 abilita la NPU dei Ryzen AI Max 400 “Gorgon Halo”</h2>
+<p>È arrivata la patch per abilitare la NPU AIE2 Revision 9 dei futuri Ryzen AI Max 400 nel driver AMDXDNA. L'intervento è minimo ma sufficiente a riconoscere l'hardware, e dovrebbe entrare nella finestra di merge di Linux 7.4.</p>
+<p><strong>Perché conta:</strong> Gorgon Halo è una piattaforma molto interessante per Linux e workload AI locali; avere la NPU supportata al lancio evita di lasciare inutilizzata una parte importante del chip.</p>
+<p><a href="https://www.phoronix.com/news/AMD-Gorgon-Halo-NPU-LInux">Fonte: Phoronix</a></p></section><hr>
+
+<section class="card"><h2>6. Valve lavora al foveated rendering open source nel driver Turnip</h2>
+<p>Per Steam Frame, Valve ha contribuito al supporto del foveated rendering nel driver Vulkan open source Turnip per GPU Qualcomm Adreno, sfruttando estensioni Vulkan come <code>VK_EXT_fragment_density_map</code>.</p>
+<p><strong>Perché conta:</strong> renderizzare ad alta qualità solo dove guarda l'utente può ridurre il carico GPU e migliorare prestazioni e consumi nei visori VR.</p>
+<p><a href="https://www.phoronix.com/news/Steam-Frame-Turnip-Foveated">Fonte: Phoronix</a></p></section><hr>
+
+<section class="card"><h2>7. NVIDIA: nuovo richiamo alla sicurezza dei driver GPU</h2>
+<p>Il recap di oggi segnala un nuovo bollettino sicurezza NVIDIA relativo ai driver GPU, con classi di vulnerabilità che possono includere denial of service, escalation dei privilegi, disclosure o alterazione dei dati e, nei casi peggiori, esecuzione di codice.</p>
+<p><strong>Perché conta:</strong> sui sistemi Linux con GPU NVIDIA conviene mantenere il driver aggiornato alla release corretta per il proprio ramo supportato.</p>
+<p><a href="https://www.nvidia.com/en-us/security/">Fonte: NVIDIA Security</a></p></section><hr>
+
+<section class="card"><h2>8. OpenAI: la distillazione dei modelli resta un fronte di sicurezza</h2>
+<p>OpenAI continua a descrivere tentativi coordinati di estrarre capacità da modelli frontier attraverso tecniche di distillazione, non più limitate alla semplice estrazione della chain-of-thought ma estese a pipeline con dati sintetici, pulizia su larga scala e ottimizzazione di preferenze.</p>
+<p><strong>Perché conta:</strong> la distillazione può ridurre enormemente il costo di replica di capacità avanzate, ma può anche trasferirle senza le stesse protezioni e procedure di sicurezza.</p>
+<p><a href="https://cdn.openai.com/pdf/045aa967-ee96-4a09-94ee-3098ddf6db2c/OpenAI-US-House-Select-Cmte-Update-%5B021226%5D.pdf">Fonte: OpenAI</a></p></section><hr>
+
+<section class="card"><h2>9. Anthropic prova a misurare quali lavori fisici sono già esposti ai robot</h2>
+<p>Anthropic propone un “robot exposure index” basato sui compiti che i robot possono svolgere oggi. Secondo l'analisi, i robot possono già coprire una quota rilevante delle attività fisiche, ma spesso solo in ambienti molto controllati e con costi ancora superiori al lavoro umano.</p>
+<p><strong>Perché conta:</strong> il lavoro fisico automatizzabile non coincide con il lavoro davvero sostituibile oggi; costi, ambiente e flessibilità restano determinanti.</p>
+<p><a href="https://www.anthropic.com/research/what-work-can-robots-do">Fonte: Anthropic</a></p></section><hr>
+
+<section class="card"><h2>10. Tcl/Tk 9.1: screen reader, RTL e nuovo toggle switch</h2>
+<p>Tcl/Tk 9.1 aggiunge supporto agli screen reader, supporto iniziale per testo bidirezionale e lingue right-to-left, il nuovo widget <code>ttk::toggleswitch</code> e testo ruotato. Tcl introduce inoltre nuovi comandi per Unicode, timer monotoni e filtraggio delle liste.</p>
+<p><strong>Perché conta:</strong> è un aggiornamento importante per accessibilità e internazionalizzazione di un toolkit ancora molto usato in strumenti tecnici e utility.</p>
+<p><a href="https://linuxiac.com/tcl-tk-9-1-released-with-screen-reader-support-and-rtl-text/">Fonte: Linuxiac</a></p></section><hr>
+
+<section class="card"><h2>Da tenere d'occhio</h2>
+<p><strong>EDG C++ open source</strong> — potrebbe diventare una base interessante per toolchain, analizzatori e IDE.</p>
+<p><strong>Gorgon Halo su Linux</strong> — da seguire non solo per CPU/GPU ma soprattutto per l'utilizzo reale della NPU.</p>
+<p><strong>Turnip + foveated rendering</strong> — lavoro molto interessante per il futuro della VR open source su hardware Qualcomm.</p>
+<p><strong>Robot exposure index</strong> — utile per distinguere capacità teoriche, automazione reale e convenienza economica.</p>
+</section>
+
+<nav class="archive"><a href="archive/2026-10-01.html">2026-10-01</a> · <a href="archive/2026-09-30.html">2026-09-30</a> · <a href="archive/2026-09-29.html">2026-09-29</a></nav>
+</main></body></html>
