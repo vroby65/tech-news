@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tech News Daily — 2 ottobre 2026</title>
+  <link rel="icon" href="../favicon.png">
+  <style>
+    body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;max-width:900px;margin:0 auto;padding:24px;line-height:1.55;background:#fafafa;color:#171717}
+    header{display:flex;align-items:center;gap:12px;margin-bottom:28px}
+    header img{width:44px;height:44px}
+    h1{font-size:2rem;margin:.2rem 0}
+    h2{margin-top:2rem;font-size:1.35rem}
+    .sep{border:0;border-top:1px solid #bbb;margin:28px 0}
+    a{color:#0a58ca}
+    code{background:#eee;padding:.1em .3em;border-radius:4px}
+    .watch{background:#f1f5f9;padding:18px;border-radius:10px}
+  </style>
+</head>
+<body>
+<header>
+  <img src="../favicon.png" alt="">
+  <div>
+    <div><strong>Tech News Daily</strong></div>
+    <h1>Recap tech — 2 ottobre 2026</h1>
+  </div>
+</header>
+
+<p>Le ultime 24 ore sono state soprattutto una giornata Linux e sviluppo: <strong>Ubuntu 26.10 entra in beta</strong>, Rust 1.99 migliora nettamente l’interoperabilità con C, Qt Creator 21 porta ACP/MCP al centro dell’IDE e GitHub continua a trasformare VS Code in un ambiente per agenti. Sul fronte hardware, Raspberry Pi aumenta ancora i prezzi per effetto del costo della memoria; nell’open source, invece, arriva una brutta notizia per OpenRadioss.</p>
+
+<hr class="sep">
+
+<h2>1. Ubuntu 26.10 Beta: Linux 7.3, GNOME 51 e coreutils in Rust</h2>
+
+<p>Canonical ha pubblicato la beta di <strong>Ubuntu 26.10 “Stonking Stingray”</strong>, con uscita stabile prevista il 15 ottobre. Le immagini includono Linux 7.3-rc, GNOME 51, Mesa 26.2, GStreamer 1.30 e una toolchain molto recente con GCC 16, Python 3.14 e OpenJDK 27. Continua inoltre la transizione verso i coreutils scritti in Rust e migliora l’integrazione con autenticazione Microsoft, smart card e PKCS#11.</p>
+
+<p><strong>Perché conta:</strong> è una fotografia molto chiara della direzione che prenderà lo stack Ubuntu nei prossimi mesi. <strong>Da provare:</strong> sì in VM o live USB; non la userei ancora come sistema principale.</p>
+
+<p><a href="https://ubuntu.com/">Fonte primaria: Ubuntu</a> · <a href="https://www.omgubuntu.co.uk/">OMG! Ubuntu</a></p>
+
+<hr class="sep">
+
+<h2>2. Rust 1.99: ora Rust può definire direttamente funzioni C variadiche</h2>
+
+<p><strong>Rust 1.99</strong> stabilizza la definizione di funzioni variadiche compatibili con ABI C e C-unwind. Rust poteva già chiamare funzioni come <code>printf</code>; ora può anche implementare direttamente API basate su <code>...</code>. Arrivano inoltre nuove API stabili per ricavare size e alignment da raw pointer e numerose aggiunte alla standard library.</p>
+
+<p><strong>Perché conta:</strong> riduce un’altra barriera nell’integrazione Rust/C, importante per kernel, librerie di sistema e FFI. <strong>Da provare:</strong> sì; con rustup basta il normale aggiornamento della toolchain stable.</p>
+
+<p><a href="https://blog.rust-lang.org/">Fonte primaria: Rust</a></p>
+
+<hr class="sep">
+
+<h2>3. Qt Creator 21 Beta: ACP e MCP diventano funzioni predefinite</h2>
+
+<p><strong>Qt Creator 21 Beta</strong> abilita per default l’integrazione ACP e il server MCP. MCP richiede ora autenticazione con bearer token; ACP passa al protocollo v2 e la chat può aggiornare agenti, gestire sessioni per workspace, cambiare agente e mostrare consumo di token per sessione e singolo turno. Arrivano anche supporto Podman, HarmonyOS sperimentale e Windows remoto via SSH.</p>
+
+<p><strong>Perché conta:</strong> l’IDE Qt non tratta più gli agenti come plugin marginali: ACP e MCP entrano nel normale ambiente di sviluppo. <strong>Da provare:</strong> sì se si sviluppa in Qt/C++, ma resta una beta.</p>
+
+<p><a href="https://www.qt.io/blog">Fonte primaria: Qt</a></p>
+
+<hr class="sep">
+
+<h2>4. GitHub Copilot/VS Code: automazioni, HydraFusion e agent merge</h2>
+
+<p>GitHub ha riepilogato le novità agentiche arrivate in VS Code durante settembre. Tra le più interessanti ci sono <strong>HydraFusion</strong>, che sceglie automaticamente modelli e workflow, automazioni schedulabili, <strong>agent merge</strong> per gestire feedback di review, check falliti e conflitti, e la possibilità di creare pull request direttamente dalle sessioni Copilot, Claude o Codex. Gli agenti possono inoltre partire dentro Dev Container e le conversazioni Codex possono essere riprese tra ChatGPT e VS Code.</p>
+
+<p><strong>Perché conta:</strong> il coding agent sta passando da “chat che modifica file” a processo persistente che può seguire un lavoro fino al merge. <strong>Da approfondire:</strong> sì, soprattutto HydraFusion e agent merge; diverse funzioni sono ancora preview.</p>
+
+<p><a href="https://github.blog/changelog/">Fonte primaria: GitHub</a></p>
+
+<hr class="sep">
+
+<h2>5. AMD prepara un’altra ottimizzazione memoria per Linux 7.4</h2>
+
+<p>AMD ha messo in coda per Linux 7.4 un’ottimizzazione <strong>RMPOPT</strong> che riduce lavoro inutile nella gestione delle page table su piattaforme AMD. Arriva dopo altre ottimizzazioni recenti rivolte soprattutto alle iGPU e ai carichi AI/LLM.</p>
+
+<p><strong>Perché conta:</strong> Linux 7.4 si sta delineando come una release particolarmente ricca di miglioramenti AMD, alcuni dei quali incidono direttamente sui sistemi con grafica integrata e memoria condivisa. <strong>Da fare:</strong> nulla ora; è lavoro upstream da attendere nella release stabile.</p>
+
+<p><a href="https://www.phoronix.com/">Fonte: Phoronix</a></p>
+
+<hr class="sep">
+
+<h2>6. Raspberry Pi 5 2 GB sale a 77,50 dollari</h2>
+
+<p>Raspberry Pi ha aumentato di <strong>12,50 dollari</strong> il prezzo delle varianti da 2 GB: Raspberry Pi 4 passa a 67,50 dollari e <strong>Raspberry Pi 5 a 77,50 dollari</strong>. Eben Upton attribuisce la decisione al forte aumento del costo della memoria. Restano invariati i modelli da 1 GB e i Compute Module 4/5 da 2 GB.</p>
+
+<p><strong>Perché conta:</strong> il Pi 5 da 2 GB perde una parte importante del vantaggio economico che tradizionalmente distingueva Raspberry Pi dai mini-PC. <strong>Da valutare:</strong> prima dell’acquisto confronterei ormai sempre il prezzo complessivo Pi + alimentatore + storage + case con un mini-PC usato o entry-level.</p>
+
+<p><a href="https://www.raspberrypi.com/news/">Fonte primaria: Raspberry Pi</a></p>
+
+<hr class="sep">
+
+<h2>7. Siemens chiude OpenRadioss: stop a un promettente progetto open source</h2>
+
+<p>Siemens ha deciso di interrompere <strong>OpenRadioss</strong>, versione open source del solver agli elementi finiti Radioss. Il progetto era nato in Altair e la situazione è cambiata dopo l’acquisizione di Altair da parte di Siemens.</p>
+
+<p><strong>Perché conta:</strong> è un promemoria concreto del rischio di dipendere da un progetto open source controllato quasi interamente da una singola azienda: una licenza aperta protegge il codice già pubblicato, ma non garantisce che lo sviluppo continui. <strong>Da seguire:</strong> sì, soprattutto per vedere se nascerà un fork comunitario.</p>
+
+<p><a href="https://www.phoronix.com/">Fonte: Phoronix</a></p>
+
+<hr class="sep">
+
+<h2>8. Nitrux 7.0: desktop Hyprland sempre più costruito in casa</h2>
+
+<p><strong>Nitrux 7.0</strong>, distribuzione senza systemd, sostituisce diversi componenti esterni della sessione con un proprio Workspace Environment coordinato da <code>nwsm</code> e OpenRC. Hyprland rimane il compositor, ma Waybar, Crystal Dock, SwayNC, Hyprlock, Wlogout e Grimshot escono dalla configurazione predefinita a favore di componenti Nitrux.</p>
+
+<p><strong>Perché conta:</strong> è un esperimento interessante di desktop Wayland integrato senza systemd e senza costruire un compositor da zero. <strong>Da provare:</strong> sì in VM o macchina secondaria, soprattutto per chi segue ambienti Wayland alternativi.</p>
+
+<p><a href="https://linuxiac.com/">Fonte: Linuxiac</a></p>
+
+<hr class="sep">
+
+<section class="watch">
+<h2>Da tenere d’occhio</h2>
+
+<p><strong>Qt Creator + ACP/MCP</strong> — uno degli esempi più chiari di IDE tradizionale che incorpora protocolli standard per agenti invece di legarsi a un singolo provider.</p>
+
+<p><strong>HydraFusion</strong> — il routing automatico fra modelli potrebbe diventare più importante della scelta manuale del “modello migliore”.</p>
+
+<p><strong>Linux 7.4 su AMD</strong> — continua ad accumulare ottimizzazioni interessanti per iGPU, memoria e workload AI locali.</p>
+
+<p><strong>OpenRadioss</strong> — da osservare se la comunità sfrutterà la natura open source del codice esistente per continuare il progetto con un fork indipendente.</p>
+</section>
+
+</body>
+</html>
