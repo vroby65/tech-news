@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tech News Daily — 3 ottobre 2026</title>
+  <link rel="icon" href="../favicon.png">
+  <style>
+    body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;max-width:900px;margin:0 auto;padding:24px;line-height:1.55;background:#fafafa;color:#171717}
+    header{display:flex;align-items:center;gap:12px;margin-bottom:28px}
+    header img{width:44px;height:44px}
+    h1{font-size:2rem;margin:.2rem 0}
+    h2{margin-top:2rem;font-size:1.35rem}
+    .sep{border:0;border-top:1px solid #bbb;margin:28px 0}
+    a{color:#0a58ca}
+    .watch{background:#f1f5f9;padding:18px;border-radius:10px}
+  </style>
+</head>
+<body>
+<header>
+  <img src="../favicon.png" alt="">
+  <div>
+    <div><strong>Tech News Daily</strong></div>
+    <h1>Recap tech — 3 ottobre 2026</h1>
+  </div>
+</header>
+
+<p>Le ultime 24 ore portano soprattutto novità concrete su sviluppo e open source: <strong>COSMIC vieta i contributi generati dagli LLM</strong>, GitHub rende la code review di Copilot richiamabile via API, Valve continua a rifinire il codec Pyrowave e Qualcomm mostra quanto è maturato lo stack grafico Linux open source per Snapdragon. Sul fronte dei grandi modelli AI non emerge una nuova major release ufficiale di OpenAI, Anthropic, Google DeepMind o DeepSeek nelle ultime 24 ore.</p>
+
+<hr class="sep">
+
+<h2>1. COSMIC vieta codice e perfino descrizioni di PR generate dagli LLM</h2>
+
+<p>Il progetto <strong>COSMIC di System76</strong> ha irrigidito nettamente la propria policy: le pull request devono ora dichiarare di non contenere contenuto generato da LLM, compresi codice, commenti e descrizione della PR. Il motivo indicato dai maintainer è soprattutto pratico: i contributi AI di persone che conoscono poco il progetto stanno aumentando il carico di revisione e raramente vengono accettati.</p>
+
+<p><strong>Perché conta:</strong> è quasi l'opposto della policy adottata da altri progetti che ammettono AI purché dichiarata. Il problema emergente nell'open source non è più soltanto “il codice AI è buono?”, ma <strong>chi paga il costo della revisione</strong>. <strong>Da approfondire:</strong> sì; potrebbe diventare un precedente importante per altri grandi progetti.</p>
+
+<p><a href="https://linuxiac.com/">Fonte: Linuxiac</a></p>
+
+<hr class="sep">
+
+<h2>2. GitHub Copilot Code Review diventa richiamabile via REST e GraphQL</h2>
+
+<p>GitHub permette ora di richiedere una <strong>Copilot code review direttamente tramite REST o GraphQL API</strong>, scegliendo anche il livello di effort. “Balanced” diventa il valore predefinito. Questo consente di inserire la revisione AI dentro script, pipeline CI e strumenti interni senza doverla avviare manualmente dalla pagina della pull request.</p>
+
+<p><strong>Perché conta:</strong> la code review AI diventa una primitive automatizzabile, quindi può entrare facilmente in workflow agentici e CI. <strong>Da provare:</strong> sì, soprattutto su repository dove una seconda revisione automatica può essere eseguita prima di coinvolgere una persona.</p>
+
+<p><a href="https://github.blog/changelog/">Fonte primaria: GitHub</a></p>
+
+<hr class="sep">
+
+<h2>3. GitHub Copilot ritira quattro modelli: il ricambio diventa rapidissimo</h2>
+
+<p>Dal 2 ottobre GitHub ha deprecato in tutti gli ambienti Copilot <strong>Gemini 3.5 Flash, Gemini 3.6 Flash, Kimi K2.7 Code e Claude Opus 4.7</strong>. Le alternative consigliate sono rispettivamente Gemini 3.8 Flash, Kimi K3 e Claude Opus 5.5.</p>
+
+<p><strong>Perché conta:</strong> per chi costruisce workflow e agenti fissando esplicitamente il nome del modello, il ciclo di vita sta diventando molto breve. Conviene separare la configurazione del modello dal codice dell'agente e prevedere un fallback. <strong>Da fare:</strong> controllare eventuali configurazioni Copilot che nominano esplicitamente uno dei quattro modelli.</p>
+
+<p><a href="https://github.blog/changelog/">Fonte primaria: GitHub</a></p>
+
+<hr class="sep">
+
+<h2>4. Valve continua a spingere Pyrowave per Steam Remote Play</h2>
+
+<p>La nuova Steam Client Beta migliora il calcolo automatico del bitrate del codec <strong>Pyrowave</strong>, aggiunge parametri per regolarne la qualità e permette bitrate manuali fino a <strong>1 Gbit/s</strong>. Valve avverte però che aumentare la banda aumenta anche la latenza: l'obiettivo rimane ottenere streaming locale ad altissima qualità e bassissimo ritardo, non semplicemente spingere più dati possibile.</p>
+
+<p><strong>Perché conta:</strong> Valve sta costruendo uno stack di streaming sempre meno dipendente dai codec video tradizionali, utile per Steam Deck, Steam Machine e Steam Frame. <strong>Da provare:</strong> sì su rete Ethernet veloce; Pyrowave resta sperimentale e richiede il client Beta.</p>
+
+<p><a href="https://www.gamingonlinux.com/">Fonte: GamingOnLinux</a></p>
+
+<hr class="sep">
+
+<h2>5. Qualcomm: Freedreno/Turnip ormai è uno stack Linux strategico, non un esperimento</h2>
+
+<p>Al X.Org Developers Conference Qualcomm ha riepilogato il lavoro upstream su <strong>MSM DRM, Freedreno e Turnip</strong>. Il supporto comprende i nuovi Snapdragon X2 e Adreno 800; Rusticl è abilitato di default con OpenCL 3.1. Tra i prossimi obiettivi ci sono GPU firmware scheduling, Shared Virtual Memory per OpenCL e l'uso del nuovo matrix core MALU di Adreno 850 per carichi compute.</p>
+
+<p><strong>Perché conta:</strong> Snapdragon sta acquisendo uno stack grafico Linux upstream sempre più completo, compreso compute oltre alla grafica. Questo rafforza concretamente la possibilità di laptop ARM Linux competitivi nel 2027. <strong>Da seguire:</strong> decisamente sì, soprattutto Snapdragon X2 e MALU.</p>
+
+<p><a href="https://www.phoronix.com/">Fonte: Phoronix/XDC 2026</a></p>
+
+<hr class="sep">
+
+<h2>6. Cloudflare prepara una CA pubblica gratuita alternativa a Let's Encrypt</h2>
+
+<p>Cloudflare sta costruendo una <strong>Certificate Authority pubblica gratuita e ACME-first</strong>. Ha chiesto l'inclusione nei root program di Chrome, Apple, Microsoft e Mozilla e ha firmato un accordo per acquisire una root GlobalSign già ampiamente fidata. L'emissione richiederà automazione ACME con supporto ARI; per il primo trimestre 2027 sono previsti anche i Merkle Tree Certificates orientati al mondo post-quantum.</p>
+
+<p><strong>Attenzione:</strong> Cloudflare <strong>non sta ancora emettendo</strong> questi certificati pubblici: deve completare i processi di trust. <strong>Perché conta:</strong> per self-hosting e server Linux potrebbe nascere una vera seconda infrastruttura gratuita su scala Let’s Encrypt, utilizzabile cambiando sostanzialmente l'endpoint ACME. <strong>Da seguire:</strong> sì, soprattutto quando verrà aperta l'emissione pubblica.</p>
+
+<p><a href="https://blog.cloudflare.com/">Fonte primaria: Cloudflare</a></p>
+
+<hr class="sep">
+
+<section class="watch">
+<h2>Da tenere d'occhio</h2>
+
+<p><strong>Policy AI nell'open source</strong> — COSMIC sceglie il divieto mentre altri progetti accettano contributi AI dichiarati: nel 2027 potrebbe diventare una questione standard nella governance dei repository.</p>
+
+<p><strong>Copilot Code Review API</strong> — rende molto semplice costruire una pipeline “agente scrive → agente revisiona → umano approva”, con implicazioni interessanti anche sui costi e sulla qualità.</p>
+
+<p><strong>Snapdragon X2 + Turnip</strong> — driver kernel, Vulkan, OpenCL e compute stanno convergendo rapidamente verso uno stack ARM Linux completo.</p>
+
+<p><strong>Cloudflare CA</strong> — quando entrerà realmente in produzione potrebbe diventare una delle alternative più importanti a Let's Encrypt per server e servizi self-hosted.</p>
+</section>
+
+</body>
+</html>
