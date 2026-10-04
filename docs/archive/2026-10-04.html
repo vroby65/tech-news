@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tech News Daily — 4 ottobre 2026</title>
+  <link rel="icon" href="../favicon.png">
+  <style>
+    body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;max-width:900px;margin:0 auto;padding:24px;line-height:1.55;background:#fafafa;color:#171717}
+    header{display:flex;align-items:center;gap:12px;margin-bottom:28px}
+    header img{width:44px;height:44px}
+    h1{font-size:2rem;margin:.2rem 0}
+    h2{margin-top:2rem;font-size:1.35rem}
+    .sep{border:0;border-top:1px solid #bbb;margin:28px 0}
+    a{color:#0a58ca}
+    .watch{background:#f1f5f9;padding:18px;border-radius:10px}
+  </style>
+</head>
+<body>
+<header>
+  <img src="../favicon.png" alt="">
+  <div>
+    <div><strong>Tech News Daily</strong></div>
+    <h1>Recap tech — 4 ottobre 2026</h1>
+  </div>
+</header>
+
+<p>Nelle ultime 24 ore non emerge una nuova major release ufficiale di <a href="https://openai.com/">OpenAI</a>, <a href="https://www.anthropic.com/">Anthropic</a>, Google DeepMind o DeepSeek. Le novità più concrete arrivano invece da Linux e sviluppo: primi device tree Apple M4/A18 Pro per Linux 7.4, patch promettenti sulla latenza dello scheduler, Vulkan 1.4 su Apple tramite KosmicKrisp, ulteriore lavoro Valve sulle vecchie Radeon e Rust promosso a linguaggio Tier-1 dentro Microsoft. Risorse Artificiali non ha pubblicato nel periodo un contenuto tecnico abbastanza rilevante da giustificare l'inserimento.</p>
+
+<hr class="sep">
+
+<h2>1. Linux 7.4: primi Device Tree per Apple M4 e A18 Pro</h2>
+
+<p>Gli sviluppatori Asahi hanno inviato i primi Device Tree destinati a Linux 7.4 per hardware Apple M4 e A18 Pro, compreso il MacBook Neo. È ancora supporto iniziale: il punto importante è che la nuova generazione Apple Silicon comincia a entrare nell'upstream Linux invece di vivere soltanto in alberi sperimentali.</p>
+
+<p><strong>Perché conta:</strong> ogni generazione Apple richiede reverse engineering considerevole; avere presto le descrizioni hardware upstream riduce il divario per le future distribuzioni Asahi. <strong>Da provare:</strong> no su una macchina di produzione; è lavoro preliminare da seguire.</p>
+
+<p><a href="https://www.phoronix.com/news/Linux-7.4-Apple-Device-Trees">Fonte: Phoronix</a></p>
+
+<hr class="sep">
+
+<h2>2. Nuove patch Linux riducono la latenza dei task con time-slice breve</h2>
+
+<p>Vincent Guittot di Linaro ha proposto modifiche allo scheduler Linux mirate ai task con intervalli di esecuzione molto brevi. I primi risultati pubblicati mostrano una riduzione della latenza in scenari sensibili ai piccoli time-slice, senza presentare la patch come un'accelerazione universale del kernel.</p>
+
+<p><strong>Perché conta:</strong> desktop interattivi, audio e workload con molti task brevi possono risentire più della latenza che del throughput assoluto. <strong>Da seguire:</strong> sì; per ora sono patch in discussione, non una funzione già presente in una release stabile.</p>
+
+<p><a href="https://www.phoronix.com/news/Linux-Latency-Short-Slice-Tasks">Fonte: Phoronix</a></p>
+
+<hr class="sep">
+
+<h2>3. KosmicKrisp raggiunge la conformità Vulkan 1.4 su Apple</h2>
+
+<p><strong>KosmicKrisp</strong>, il progetto guidato da LunarG per implementare Vulkan sopra Metal, ha ottenuto la conformità Vulkan 1.4. Il lavoro mira a fornire un'implementazione Vulkan moderna sui sistemi Apple e sta mostrando anche progressi prestazionali rispetto al percorso Metal usato come base.</p>
+
+<p><strong>Perché conta:</strong> un Vulkan conforme e mantenuto professionalmente su macOS amplia la portabilità di motori, giochi e applicazioni grafiche senza obbligare gli sviluppatori a mantenere un backend Metal dedicato. <strong>Da approfondire:</strong> sì, soprattutto per gaming e software multipiattaforma.</p>
+
+<p><a href="https://www.phoronix.com/news/KosmicKrisp-Vulkan-1.4-2026">Fonte: Phoronix</a></p>
+
+<hr class="sep">
+
+<h2>4. Valve continua a migliorare le vecchie AMD GCN su Linux</h2>
+
+<p>Al XDC 2026 Timur Kristóf di Valve ha riepilogato il lavoro fatto sulle GPU AMD GCN 1.0/1.1: migrazione dal vecchio driver Radeon ad AMDGPU, correzioni al display e al power management, soft reset e accesso al moderno driver Vulkan RADV. Parte di questo lavoro aveva già prodotto incrementi prestazionali importanti sulle vecchie schede.</p>
+
+<p><strong>Perché conta:</strong> Valve sta spendendo risorse non solo sulle GPU nuove ma anche per mantenere utilizzabile hardware di oltre dieci anni. È un beneficio diretto dell'ecosistema Steam/Linux che resta nell'upstream. <strong>Da provare:</strong> sì per chi possiede vecchie Radeon compatibili, usando kernel e Mesa aggiornati della distribuzione.</p>
+
+<p><a href="https://www.phoronix.com/news/XDC-2026-Valve-Timur-AMDGPU">Fonte: Phoronix/XDC 2026</a></p>
+
+<hr class="sep">
+
+<h2>5. Rust diventa un linguaggio Tier-1 all'interno di Microsoft</h2>
+
+<p>Microsoft ha elevato <strong>Rust a linguaggio Tier-1 per lo sviluppo interno</strong>, insieme a C++, C# e TypeScript. Significa toolchain supportata, build sicure, CI, procedure di qualità e integrazione con i processi aziendali. Microsoft usa Rust in firmware, driver, kernel, hypervisor, microservizi e applicazioni; oltre cento repository interni usano già il backend <code>rustc_codegen_utc</code>, pensato per integrare Rust con l'infrastruttura MSVC.</p>
+
+<p><strong>Perché conta:</strong> non è una dichiarazione di preferenza ma infrastruttura di produzione: Rust diventa una scelta standard disponibile ai team Microsoft. <strong>Da approfondire:</strong> sì, soprattutto <code>rustc_codegen_utc</code> e l'interoperabilità Rust/C++ su Windows.</p>
+
+<p><a href="https://linuxiac.com/rust-is-now-a-tier-1-programming-language-at-microsoft/">Fonte: Linuxiac</a></p>
+
+<hr class="sep">
+
+<h2>6. Parrot OS 7.4: AnonSurf 6.0, immagini amd64v3 e ARM migliorato</h2>
+
+<p><strong>Parrot OS 7.4</strong> aggiorna la distribuzione orientata a sicurezza e privacy con Linux 7.1, AnonSurf 6.0, nuovi strumenti e immagini ottimizzate amd64v3 e arm64v8.2. AnonSurf rivede la gestione di Tor, DNS, firewall e recupero delle sessioni; Rocket 2.0 migliora invece la gestione degli strumenti di sicurezza containerizzati, con Podman rootless come runtime preferito.</p>
+
+<p><strong>Perché conta:</strong> è interessante anche oltre il pentesting: l'uso di container rootless e immagini ottimizzate per CPU moderne mostra una direzione pratica per workstation di sicurezza. <strong>Da provare:</strong> sì in VM; chi la usa già può passare tramite il normale <code>parrot-upgrade</code>.</p>
+
+<p><a href="https://linuxiac.com/security-focused-parrot-os-7-4-released-with-linux-kernel-7-1-anonsurf-6-0/">Fonte: Linuxiac</a></p>
+
+<hr class="sep">
+
+<h2>7. KDE Plasma 6.8 Beta 2: rifiniture a tiling, GPU monitor e desktop remoto</h2>
+
+<p>La seconda beta di <strong>KDE Plasma 6.8</strong> corregge diversi problemi prima della stabile prevista il 14 ottobre: angoli coerenti per le finestre tiled, misurazione più accurata della memoria GPU, fix a Spectacle e alla registrazione schermo, migliore compatibilità Remote Desktop con FreeRDP 3.32+ e ulteriori correzioni di stabilità e accessibilità.</p>
+
+<p><strong>Perché conta:</strong> non introduce una funzione rivoluzionaria, ma tocca aree molto pratiche del desktop quotidiano, in particolare GPU monitoring e remote desktop. <strong>Da provare:</strong> solo per test; mancano pochi giorni alla stabile.</p>
+
+<p><a href="https://linuxiac.com/kde-plasma-6-8-beta-2-brings-more-polish-ahead-of-october-14-release/">Fonte: Linuxiac</a></p>
+
+<hr class="sep">
+
+<section class="watch">
+<h2>Da tenere d'occhio</h2>
+
+<p><strong>Linux su Apple M4/A18 Pro</strong> — il supporto upstream comincia a muoversi e sarà interessante vedere quanto rapidamente Asahi riuscirà a colmare il divario con M1/M2.</p>
+
+<p><strong>Scheduler Linux e short-slice task</strong> — se i risultati reggeranno su workload reali, può essere una di quelle modifiche poco appariscenti che rendono il desktop più reattivo.</p>
+
+<p><strong>KosmicKrisp</strong> — Vulkan 1.4 conforme sopra Metal può diventare un tassello importante per la portabilità dei giochi verso macOS.</p>
+
+<p><strong>Rust dentro Microsoft</strong> — il passaggio a Tier-1 rende particolarmente interessante osservare quanto Rust entrerà nei componenti di sistema oggi dominati da C e C++.</p>
+</section>
+
+</body>
+</html>
