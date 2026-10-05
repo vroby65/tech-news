@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tech News Daily — 5 ottobre 2026</title>
+  <link rel="icon" href="../favicon.png">
+  <style>
+    body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;max-width:900px;margin:0 auto;padding:24px;line-height:1.55;background:#fafafa;color:#171717}
+    header{display:flex;align-items:center;gap:12px;margin-bottom:28px}
+    header img{width:44px;height:44px}
+    h1{font-size:2rem;margin:.2rem 0}
+    h2{margin-top:2rem;font-size:1.35rem}
+    .sep{border:0;border-top:1px solid #bbb;margin:28px 0}
+    .article-img{max-width:100%;height:auto;border-radius:10px;margin:12px 0}
+    a{color:#0a58ca}
+    code{background:#eee;padding:.1em .3em;border-radius:4px}
+    .watch{background:#f1f5f9;padding:18px;border-radius:10px}
+  </style>
+</head>
+<body>
+<header>
+  <img src="../favicon.png" alt="">
+  <div>
+    <div><strong>Tech News Daily</strong></div>
+    <h1>Recap tech — 5 ottobre 2026</h1>
+  </div>
+</header>
+
+<p>Nelle ultime 24 ore non emerge una nuova major release ufficiale di OpenAI, Anthropic, Google DeepMind o DeepSeek. La giornata è però interessante su Linux: nuove patch MGLRU-FG promettono forti guadagni sotto pressione di memoria, NVIDIA ha misurato seriamente la latenza Wayland vs X.Org, Linux 7.3-rc6 entra nella fase finale e il progetto OpenRadioss rinasce subito come OpenCourant. Su GitHub Trending spicca invece <strong>claude-mem</strong>, segnale di quanto la memoria persistente stia diventando centrale nei coding agent. Risorse Artificiali non ha pubblicato nelle ultime 24 ore un nuovo contenuto tecnico abbastanza recente da entrare nel recap.</p>
+
+<hr class="sep">
+
+<h2>1. MGLRU-FG: fino al 10–40% in più in alcuni test di memoria Linux</h2>
+
+<p>Kairui Song ha pubblicato una nuova revisione RFC di <strong>MGLRU-FG</strong>, che aggiunge una promozione guidata dalla frequenza di accesso alle pagine di memoria. Invece di aspettare soltanto le decisioni del meccanismo di reclaim, le pagine più “calde” vengono riconosciute e promosse prima.</p>
+
+<p>I benchmark riportati con le patch mostrano miglioramenti nell'ordine del <strong>10–40%</strong> in diversi workload, con MongoDB circa +13,5%, FIO fino a +11% e un test Chromium/Node.js con zRAM molto più veloce. Sono risultati della patch series, non un +40% generale per qualsiasi PC.</p>
+
+<p><strong>Perché conta:</strong> sul desktop il beneficio potenziale è soprattutto quando RAM e swap/zRAM sono sotto pressione. <strong>Da seguire:</strong> decisamente sì; la patch è ancora RFC, quindi non è già dentro Linux 7.3/7.4.</p>
+
+<p><a href="https://www.phoronix.com/news/Linux-MGLRU-FG-Patches">Fonte: Phoronix</a></p>
+
+<hr class="sep">
+
+<h2>2. NVIDIA misura Wayland contro X.Org: nessun vincitore netto</h2>
+
+<p>NVIDIA ha presentato a XDC 2026 un test end-to-end della latenza da pressione del tasto a cambiamento sul monitor usando un microcontrollore e un sensore ottico, quindi non semplici timestamp software. Il confronto è stato eseguito con RTX 5070, driver R610, KDE KWin, GNOME Mutter e X.Org.</p>
+
+<p>Il risultato più interessante è che <strong>Wayland e X.Org risultano ormai molto vicini</strong>, senza un vincitore chiaro. NVIDIA segnala inoltre che XWayland non introduce più automaticamente il frame extra di latenza osservato in passato e che il VRR riduce sensibilmente la latenza su entrambe le sessioni.</p>
+
+<p><strong>Perché conta:</strong> per chi usa ancora X11/Openbox, toglie peso a uno degli argomenti classici contro Wayland. Non significa che ogni compositor e ogni GPU abbiano la stessa latenza: il test copre una configurazione precisa. <strong>Da approfondire:</strong> sì, soprattutto confrontando Labwc/Openbox sullo stesso hardware.</p>
+
+<p><a href="https://www.phoronix.com/news/NVIDIA-Wayland-Xorg-Latency">Fonte: Phoronix</a> · <a href="https://indico.freedesktop.org/event/12/contributions/559/">Presentazione XDC</a></p>
+
+<hr class="sep">
+
+<h2>3. OpenRadioss rinasce come OpenCourant</h2>
+
+<img class="article-img" src="https://ciq.com/static/5ef0a022ad0b50c0c206913e35dd474f/2bcaf/thumbnail.jpg" alt="Rocky Linux e OpenRadioss">
+
+<p>Dopo la chiusura di OpenRadioss da parte di Siemens e la rimozione del repository originale, Brian Clemens e la Rocky Enterprise Software Foundation hanno avviato <strong>OpenCourant</strong>, fork comunitario basato sull'ultimo snapshot open source disponibile.</p>
+
+<p>Il progetto mantiene la licenza AGPL e punta a continuare lo sviluppo del solver agli elementi finiti usato per crash, impatti e simulazioni dinamiche fortemente non lineari.</p>
+
+<p><strong>Perché conta:</strong> è un esempio quasi didattico del valore pratico di una licenza open source: l'azienda può smettere di sviluppare, ma il codice pubblicato può continuare altrove. <strong>Da seguire:</strong> sì, soprattutto per vedere se il fork riuscirà a ricostruire comunità, infrastruttura e toolchain attorno al codice.</p>
+
+<p><a href="https://www.phoronix.com/news/OpenRadioss-OpenCourant">Fonte: Phoronix</a></p>
+
+<hr class="sep">
+
+<h2>4. AMD prepara altro hardware grafico per Linux 7.4</h2>
+
+<p>AMD ha inviato un altro pull request DRM per Linux 7.4 con supporto a nuove revisioni di numerosi blocchi GPU: OSSSYS 8.0.1, LSDMA 8.0.1, NBIF 7.10, SMUIO 15.0.3, MP 15.0.3, MMHUB 5.0 e soprattutto <strong>VPE 3.0</strong>.</p>
+
+<p>AMD abilita ormai le GPU blocco per blocco, quindi da questi numeri non si può ancora dire con certezza a quale prodotto commerciale appartengano; potrebbero essere componenti di una generazione futura, ma sarebbe prematuro etichettarli automaticamente come RDNA5.</p>
+
+<p><strong>Perché conta:</strong> il lavoro upstream continua prima dell'arrivo dell'hardware, quindi le future GPU AMD dovrebbero trovare Linux già preparato. <strong>Da fare:</strong> nulla oggi; è materiale per il prossimo ciclo kernel.</p>
+
+<p><a href="https://www.phoronix.com/news/More-AMDGPU-Linux-7.4">Fonte: Phoronix</a></p>
+
+<hr class="sep">
+
+<h2>5. Linux 7.3-rc6 e la nuova “AI normal” del kernel</h2>
+
+<p>Linus Torvalds ha taggato <strong>Linux 7.3-rc6</strong>. Il ciclo è tornato a un diff abbastanza normale, con circa metà delle modifiche nei driver: GPU, networking, USB, TTY, IIO e audio. È stato anche ritirato per ora il supporto HID++ al ricevitore Logitech Bolt a causa dei bug segnalati.</p>
+
+<p>Torvalds ha definito ormai “normale” il volume di piccoli fix agli error path alimentato anche da strumenti AI/LLM. Questo non equivale a dire che il kernel sia scritto dall'AI: significa che analisi automatizzate stanno aumentando il numero di bug piccoli individuati e di patch da revisionare.</p>
+
+<p><strong>Perché conta:</strong> è forse il segnale più concreto che l'AI sta cambiando anche la manutenzione del software di sistema, ma contemporaneamente aumenta il carico sui maintainer. <strong>Da provare:</strong> solo su macchina di test; la stabile 7.3 è attesa più avanti nel mese.</p>
+
+<p><a href="https://github.com/torvalds/linux/commits">Fonte primaria: repository Linux</a> · <a href="https://www.phoronix.com/news/Linux-7.3-rc6-Released">Phoronix</a></p>
+
+<hr class="sep">
+
+<h2>6. GitHub Trending: claude-mem porta memoria persistente a più agenti</h2>
+
+<img class="article-img" src="https://pbs.twimg.com/media/HEgZ3egacAAKEXz.jpg" alt="claude-mem">
+
+<p><strong>claude-mem</strong> è oggi tra i repository in evidenza su GitHub. Il progetto cattura ciò che un agente fa durante una sessione, comprime le osservazioni e reinietta il contesto rilevante nelle sessioni successive. Nato per Claude Code, dichiara supporto anche per Codex, Gemini, OpenCode, Copilot, Hermes e altri ambienti.</p>
+
+<p>Tra le funzioni interessanti ci sono ricerca della memoria, contesto progressivo per limitare i token, viewer web, esclusione di contenuti sensibili e funzionamento automatico tramite hook.</p>
+
+<p><strong>Perché conta:</strong> conferma che il problema degli agenti non è più soltanto “ragionare bene”, ma <strong>ricordare bene senza trascinarsi dietro tutto il contesto</strong>. <strong>Da provare:</strong> sì su un progetto non sensibile, verificando bene cosa viene memorizzato e dove; non è una nuova release odierna, ma un progetto oggi molto visibile su GitHub Trending.</p>
+
+<p><a href="https://github.com/thedotmack/claude-mem">Repository claude-mem</a> · <a href="https://github.com/explore">GitHub Trending/Explore</a></p>
+
+<hr class="sep">
+
+<h2>7. Darktable 5.6.2: fix a OpenCL, crash e modelli AI</h2>
+
+<img class="article-img" src="https://itsfoss.com/content/images/2025/11/Screenshot-From-2025-11-09-18-41-17--Edit-.png" alt="Interfaccia darktable">
+
+<p><strong>Darktable 5.6.2</strong> è disponibile come aggiornamento di manutenzione. Corregge problemi OpenCL con driver Intel recenti, crash durante Neural Restore su alcune dimensioni di sensore, output corrotto o crash quando un modello AI restituisce più dati del previsto e vari problemi Lua.</p>
+
+<p>Sono già disponibili AppImage ufficiali sia x86_64 sia AArch64. Chi arriva dalla serie 5.4 dovrebbe fare un backup: database e configurazioni aggiornati non sono poi riutilizzabili con 5.4.</p>
+
+<p><strong>Perché conta:</strong> qui si correggono crash e possibili corruzioni di output, quindi l'aggiornamento è più importante di una normale release cosmetica. <strong>Da fare:</strong> sì se usi Darktable 5.6; altrimenti aspetterei il pacchetto della distribuzione.</p>
+
+<p><a href="https://www.darktable.org/install/">Fonte primaria: darktable</a> · <a href="https://linuxiac.com/darktable-5-6-2-open-source-raw-editor-fixes-opencl-and-crashes/">Dettagli: Linuxiac</a></p>
+
+<hr class="sep">
+
+<section class="watch">
+<h2>Da tenere d'occhio</h2>
+
+<p><strong>MGLRU-FG</strong> — è la novità tecnica più interessante di oggi: se i guadagni si confermano, può migliorare sensibilmente Linux quando la memoria è sotto pressione.</p>
+
+<p><strong>Wayland vs X.Org</strong> — il fatto che una misura hardware non trovi ormai un vincitore netto rende sempre più interessante riprovare un compositor leggero come Labwc contro Openbox.</p>
+
+<p><strong>OpenCourant</strong> — vale la pena seguirlo come test reale della capacità di una comunità di salvare un progetto dopo l'abbandono del vendor.</p>
+
+<p><strong>Memoria per agenti</strong> — claude-mem è un altro segnale che il prossimo livello dei coding agent sarà sempre più fatto di memoria selettiva, skills e policy, non soltanto di modelli più grandi.</p>
+</section>
+
+</body>
+</html>
