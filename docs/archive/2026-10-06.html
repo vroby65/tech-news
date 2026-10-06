@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tech News Daily — 6 ottobre 2026</title>
+  <link rel="icon" href="../favicon.png">
+  <style>
+    body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;max-width:900px;margin:0 auto;padding:24px;line-height:1.55;background:#fafafa;color:#171717}
+    header{display:flex;align-items:center;gap:12px;margin-bottom:28px}
+    header img{width:44px;height:44px}
+    h1{font-size:2rem;margin:.2rem 0}
+    h2{margin-top:2rem;font-size:1.35rem}
+    .sep{border:0;border-top:1px solid #bbb;margin:28px 0}
+    .article-img{max-width:100%;height:auto;border-radius:10px;margin:12px 0}
+    a{color:#0a58ca}
+    code{background:#eee;padding:.1em .3em;border-radius:4px}
+    .watch{background:#f1f5f9;padding:18px;border-radius:10px}
+  </style>
+</head>
+<body>
+<header>
+  <img src="../favicon.png" alt="">
+  <div>
+    <div><strong>Tech News Daily</strong></div>
+    <h1>Recap tech — 6 ottobre 2026</h1>
+  </div>
+</header>
+
+<p>Nelle ultime 24 ore non emerge una nuova major release ufficiale di Anthropic, Google DeepMind o DeepSeek. Le novità più forti arrivano invece da OpenAI, che avvia il watermark testuale nell'UE, da GitHub con un nuovo benchmark aperto per la code review agentica, e dal mondo Linux/open source con ROCm 10.1, una grossa revisione di ZRAM, mold 3.0 riscritto in Rust e TrueNAS 27 RC.1. Risorse Artificiali non ha pubblicato nel periodo un contenuto tecnico abbastanza recente da meritare l'inserimento.</p>
+
+<hr class="sep">
+
+<h2>1. OpenAI introduce textGrain: watermark invisibile nei testi ChatGPT e Codex nell'UE</h2>
+
+<p>OpenAI ha annunciato <strong>textGrain</strong>, un sistema di watermark testuale che modifica in modo statistico le scelte dei token senza inserire caratteri nascosti o marcatori visibili. Il rollout partirà nelle prossime settimane per gli output idonei di ChatGPT e Codex nell'Unione Europea; per i clienti API, invece, il watermark è già attivabile volontariamente a livello globale su modelli selezionati.</p>
+
+<p>OpenAI sottolinea però limiti importanti: su testi brevi, contenuti molto vincolati e testo molto rielaborato la rilevazione peggiora. Nei test dichiarati dall'azienda, a un falso positivo target dell'1%, il rilevamento arriva a circa l'80% su passaggi da 200 token e circa il 95% su 400 token in domini favorevoli; sostituire il 10% delle parole con sinonimi fa scendere la rilevazione da circa 92% a 66%.</p>
+
+<p><strong>Perché conta:</strong> per chi usa ChatGPT e Codex in Italia è una modifica concreta al modo in cui il testo viene generato. Non identifica l'utente, non dimostra chi sia l'autore e non certifica che il contenuto sia vero. <strong>Da approfondire:</strong> sì, soprattutto perché OpenAI dichiara di voler rendere textGrain open source.</p>
+
+<p><a href="https://openai.com/index/eu-text-provenance/">Fonte primaria: OpenAI</a></p>
+
+<hr class="sep">
+
+<h2>2. GitHub pubblica ReviewBench: benchmark aperto per gli agenti di code review</h2>
+
+<img class="article-img" src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/6a6b9cffa127fbe097d60074_codereviewshort.png" alt="ReviewBench">
+
+<p>GitHub ha pubblicato <strong>ReviewBench</strong>, un benchmark aperto per valutare agenti di code review su pull request reali. Il corpus contiene 219 PR provenienti da 187 repository open source e copre 19 linguaggi; la distribuzione è stata modellata analizzando oltre 103 milioni di pull request GitHub.</p>
+
+<p>Il ground truth combina review umane, modelli frontier e analisi statica. Sono disponibili dataset, rubriche di valutazione, runner self-service e leaderboard; è possibile portare il proprio agente, eseguirlo sul benchmark e confrontarlo con gli altri.</p>
+
+<p><strong>Perché conta:</strong> finora era facile dire che un reviewer AI “sembra bravo”, molto più difficile misurarlo in modo riproducibile. <strong>Da provare:</strong> sì, soprattutto per confrontare Copilot, Codex, Claude Code o agenti propri sullo stesso set di PR.</p>
+
+<p><a href="https://github.blog/ai-and-ml/github-copilot/reviewbench-an-open-benchmark-for-ai-code-review/">Fonte primaria: GitHub</a></p>
+
+<hr class="sep">
+
+<h2>3. AMD ROCm 10.1: più supporto AI, profiling e I/O per GPU AMD</h2>
+
+<p><strong>ROCm 10.1</strong> è disponibile. La release si concentra su inferenza AI, strumenti per sviluppatori e profiling: aggiunge supporto per Radeon AI PRO R9600, amplia virtualizzazione e sistemi operativi supportati, porta nuove versioni dei framework AI e aggiorna lo stack compiler a LLVM 24.</p>
+
+<p>Tra le novità tecniche ci sono un fast path asincrono per hipFILE/Infinity Storage, API batch I/O, allocazioni host NUMA-aware in HIP e supporto WSL2 negli artifact TheRock in anteprima tecnica.</p>
+
+<p><strong>Perché conta:</strong> AMD continua a chiudere il divario software con CUDA, soprattutto su inferenza locale e toolchain. <strong>Da approfondire:</strong> sì per chi usa Radeon o Ryzen AI con llama.cpp, vLLM o SGLang; prima va sempre verificata la matrice ufficiale di compatibilità della propria GPU.</p>
+
+<p><a href="https://rocm.docs.amd.com/en/latest/about/release-notes.html">Fonte primaria: AMD ROCm</a> · <a href="https://www.phoronix.com/news/AMD-ROCm-10.1">Sintesi: Phoronix</a></p>
+
+<hr class="sep">
+
+<h2>4. Linux ZRAM viene riorganizzato per consumare meno memoria e ridurre blocchi</h2>
+
+<img class="article-img" src="https://www.mdpi.com/applsci/applsci-13-10526/article_deploy/html/images/applsci-13-10526-g002.png" alt="Schema di ZRAM">
+
+<p>Una nuova patch series riorganizza profondamente il backend di <strong>ZRAM</strong>. L'idea principale è separare gli stream di compressione e decompressione per CPU, evitando che un reader ad alta priorità resti bloccato dietro a un writer che detiene lo stesso stream lock.</p>
+
+<p>La revisione elimina anche allocazioni inutili dei contesti secondari: gli sviluppatori indicano risparmi da decine a centinaia di KB per contesto e per core, che su molti core possono accumularsi. I test sintetici mostrano anche miglioramenti prestazionali notevoli, ma le patch sono ancora in review.</p>
+
+<p><strong>Perché conta:</strong> è particolarmente interessante sui sistemi con poca RAM e su macchine che usano zRAM intensamente. <strong>Da seguire:</strong> sì; potrebbe essere utile anche su piccoli ARM e Raspberry, ma non è ancora codice stabile upstream.</p>
+
+<p><a href="https://www.phoronix.com/news/Linux-ZRAM-Rework-Savings">Fonte: Phoronix</a></p>
+
+<hr class="sep">
+
+<h2>5. mold 3.0: il linker ad alte prestazioni è ora riscritto in Rust</h2>
+
+<p><strong>mold 3.0</strong> è la prima major release dopo la riscrittura completa da C++ a Rust. Rimane pensato come sostituto drop-in di mold 2.42.1, ma il progetto punta ora a chiudere i gap di compatibilità con GNU ld, soprattutto nei linker script, con l'obiettivo dichiarato di poter diventare in futuro il linker di sistema predefinito su Linux.</p>
+
+<p>La nuova versione richiede Rust 1.95 o successivo, usa Cargo al posto di CMake e non dipende più da oneTBB. La riscrittura dovrebbe inoltre rendere più sicura la gestione di input corrotti.</p>
+
+<p><strong>Perché conta:</strong> è una riscrittura significativa di un tool di sistema già usato in produzione, non un nuovo progetto sperimentale. <strong>Da provare:</strong> sì su build C/C++ o Rust dove il tempo di linking pesa realmente; eviterei però di sostituire subito <code>/usr/bin/ld</code> a livello di sistema.</p>
+
+<p><a href="https://github.com/rui314/mold">Repository ufficiale</a> · <a href="https://www.phoronix.com/news/Mold-3.0-Released">Dettagli release: Phoronix</a></p>
+
+<hr class="sep">
+
+<h2>6. TrueNAS 27 RC.1: OpenZFS 2.4, WebShare, TrueSearch e S3 nativo</h2>
+
+<img class="article-img" src="https://forums.truenas.com/uploads/default/original/3X/7/9/79797a37d5e96685128afb64ffac20e59a46386d.png" alt="Dashboard TrueNAS">
+
+<p>È disponibile <strong>TrueNAS 27 RC.1</strong>, la release finora sviluppata con il nome TrueNAS 26. Usa Linux 6.18 LTS e OpenZFS 2.4 e aggiunge TrueSearch per la ricerca server-side, WebShare per accedere ai file dal browser, Fusion Pools 2.0 e supporto completo ai container LXC.</p>
+
+<p>Arriva inoltre in early access la <strong>TrueNAS Object Interface</strong>, che espone accesso S3 nativo ai dataset ZFS. La stabile 27.0 è prevista per l'inizio di dicembre.</p>
+
+<p><strong>Perché conta:</strong> per self-hosting e NAS è una release molto sostanziosa, soprattutto grazie a WebShare, ricerca e object storage. <strong>Da provare:</strong> sì in laboratorio o VM; per un NAS con dati importanti aspetterei la stabile.</p>
+
+<p><a href="https://www.truenas.com/blog/truenas-27-rc1-feature-set/">Fonte primaria: TrueNAS</a></p>
+
+<hr class="sep">
+
+<h2>7. GitHub Secret Scanning aggiunge chiavi Lovable, Pydantic AI e Supabase</h2>
+
+<img class="article-img" src="https://media.licdn.com/dms/image/v2/D4D10AQErKlzPl6L7Gg/image-shrink_800/B4DZ0_QonPIoAg-/0/1774882818883?e=2147483647&t=cJm2EWiYo54TQPHIBZ_FDO77_xszGLVLsnioogUfNRk&v=beta" alt="Lovable Security Center">
+
+<p>GitHub Secret Scanning riconosce ora nuovi tipi di credenziali legati a <strong>Lovable, Pydantic e Supabase</strong>. Fra i nuovi detector ci sono <code>lovable_api_key</code>, <code>logfire_token</code>, <code>pydantic_ai_gateway_api_key</code>, <code>supabase_oauth_access_token</code> e <code>supabase_scoped_personal_access_token</code>.</p>
+
+<p>Lovable entra anche nel partner program: se una sua chiave viene trovata in un repository pubblico, GitHub può segnalarla direttamente al provider affinché venga revocata o ruotata rapidamente.</p>
+
+<p><strong>Perché conta:</strong> i progetti AI moderni accumulano sempre più token e chiavi di servizi esterni, spesso usati da agenti e CI. <strong>Da fare:</strong> se usi uno di questi servizi, vale la pena controllare che Secret Scanning sia attivo e che nessuna credenziale sia finita nella cronologia Git.</p>
+
+<p><a href="https://github.blog/changelog/2026-10-05-secret-scanning-adds-detectors-for-lovable-supabase-and-more/">Fonte primaria: GitHub</a></p>
+
+<hr class="sep">
+
+<section class="watch">
+<h2>Da tenere d'occhio</h2>
+
+<p><strong>textGrain</strong> — oltre al rollout europeo, OpenAI dichiara l'intenzione di renderlo open source: potrebbe diventare un riferimento tecnico per la provenienza del testo AI.</p>
+
+<p><strong>ReviewBench</strong> — finalmente c'è una base pubblica e riproducibile per confrontare agenti di code review invece di affidarsi soltanto a demo e impressioni.</p>
+
+<p><strong>ZRAM rework</strong> — particolarmente interessante per macchine con poca RAM, mini-PC e sistemi ARM.</p>
+
+<p><strong>ROCm 10.1</strong> — AMD continua a investire in inference e tooling Linux; il punto da osservare resta quanto rapidamente migliorerà il supporto pratico delle Radeon consumer.</p>
+</section>
+
+</body>
+</html>
