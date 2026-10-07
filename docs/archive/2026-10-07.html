@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tech News Daily — 7 ottobre 2026</title>
+  <link rel="icon" href="../favicon.png">
+  <style>
+    body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;max-width:900px;margin:0 auto;padding:24px;line-height:1.55;background:#fafafa;color:#171717}
+    header{display:flex;align-items:center;gap:12px;margin-bottom:28px}
+    header img{width:44px;height:44px}
+    h1{font-size:2rem;margin:.2rem 0}
+    h2{margin-top:2rem;font-size:1.35rem}
+    .sep{border:0;border-top:1px solid #bbb;margin:28px 0}
+    .article-img{max-width:100%;height:auto;border-radius:10px;margin:12px 0}
+    a{color:#0a58ca}
+    code{background:#eee;padding:.1em .3em;border-radius:4px}
+    .watch{background:#f1f5f9;padding:18px;border-radius:10px}
+  </style>
+</head>
+<body>
+<header>
+  <img src="../favicon.png" alt="">
+  <div>
+    <div><strong>Tech News Daily</strong></div>
+    <h1>Recap tech — 7 ottobre 2026</h1>
+  </div>
+</header>
+
+<p>Le ultime 24 ore portano una vera major release AI: <strong>Mistral Large 4</strong>, modello open-weight da oltre un trilione di parametri in preview pubblica. OpenAI mostra nuovi risultati sugli agenti che usano software professionale reale, Anthropic amplia l’accesso alle capacità cyber per professionisti verificati, mentre GitHub si prepara esplicitamente a uno sviluppo “agent-scale”. Sul fronte Linux spiccano il progetto CRAM di Meta, nuove patch Zswap, dodici vulnerabilità in X.Org/XWayland e un lavoro interessante sull’AMD P-State che può migliorare gli 1% low nel gaming.</p>
+
+<hr class="sep">
+
+<h2>1. Mistral Large 4: 1,05 trilioni di parametri, 49B attivi e pesi in arrivo</h2>
+
+<p>Mistral ha aperto la preview pubblica di <strong>Mistral Large 4</strong>, soprannominato “Le Chonk”. È un Mixture-of-Experts multimodale con circa <strong>1,05 trilioni di parametri totali</strong>, 49 miliardi attivi per token, encoder visivo da 1,6B e finestra di contesto fino a 1 milione di token. L’API è già disponibile e i pesi open-weight sono previsti per il 26 ottobre.</p>
+
+<p>Mistral lo presenta come particolarmente forte su coding, agenti, cybersecurity, finanza e uso multimodale. I benchmark sono quelli del produttore e vanno quindi verificati indipendentemente.</p>
+
+<p><strong>Perché conta:</strong> è la release open-weight più importante della giornata e rimette seriamente Mistral nella corsa con DeepSeek, Qwen, GLM e Kimi. <strong>Da provare:</strong> sì via API subito; per uso locale bisogna aspettare i pesi e vedere quali quantizzazioni saranno praticabili.</p>
+
+<p><a href="https://mistral.ai/it/news/mistral-large-4/">Fonte primaria: Mistral</a> · <a href="https://docs.mistral.ai/models/mistral-large-4-0">Model card</a></p>
+
+<hr class="sep">
+
+<h2>2. OpenAI addestra agenti su workflow professionali reali con Ironclad</h2>
+
+<p>OpenAI ha pubblicato nuovi risultati sul computer use applicato a software professionale. In collaborazione con Ironclad ha costruito 11 task realistici di contrattualistica, procurement e approvazioni, valutando agenti su decine di criteri per task.</p>
+
+<p>Nei test interni dichiarati da OpenAI, <strong>GPT-6 Astra</strong> ottiene un punteggio medio del 55,0% contro il 41,6% di GPT-5.6 Sol, mentre il tempo simulato per tentativo scende da 37 a 19,2 minuti. OpenAI sottolinea che sono task di ricerca specifici e non una misura generale di produttività reale.</p>
+
+<p><strong>Perché conta:</strong> il passaggio importante è da “agente che clicca” a agente che deve ricordare regole aziendali, eseguire workflow multi-step e verificare il risultato finale. <strong>Da approfondire:</strong> sì, perché è molto vicino all’idea di ChatGPT usato come assistente operativo anziché come semplice chatbot.</p>
+
+<p><a href="https://openai.com/index/advancing-computer-use-with-ironclad/">Fonte primaria: OpenAI</a></p>
+
+<hr class="sep">
+
+<h2>3. Anthropic amplia il Cyber Verification Program</h2>
+
+<p>Anthropic ha ampliato il proprio <strong>Cyber Verification Program</strong>, che permette a professionisti della sicurezza verificati di usare modelli Claude con capacità cyber più avanzate e classificatori meno restrittivi. Il programma ha ora tre livelli di accesso e comprende Opus 5.5, Sonnet 5.5, Mythos 5.1 e i modelli futuri.</p>
+
+<p>L’idea è separare maggiormente l’uso professionale autorizzato dalle protezioni più conservative applicate ai modelli generali.</p>
+
+<p><strong>Perché conta:</strong> i provider stanno costruendo un modello di accesso “a livelli” per capacità dual-use invece di applicare gli stessi blocchi a tutti. <strong>Da approfondire:</strong> sì, soprattutto per capire se questo approccio diventerà uno standard anche per altri provider.</p>
+
+<p><a href="https://www.anthropic.com/news/cyber-verification-program">Fonte primaria: Anthropic</a></p>
+
+<hr class="sep">
+
+<h2>4. GitHub prepara l’infrastruttura per lo sviluppo “agent-scale” e rende stabili le stacked PR</h2>
+
+<img class="article-img" src="https://github.github.com/gh-stack/_astro/stacked-prs.Bb_wIjgO_ZvfHHK.webp" alt="Stacked pull requests in GitHub">
+
+<p>GitHub dice esplicitamente che gli agenti stanno cambiando il profilo di carico della piattaforma: più sviluppatori e più agenti lavorano contemporaneamente sugli stessi repository e il numero di scritture cresce. Per questo GitHub sta ricostruendo parte della propria infrastruttura Git pensando allo sviluppo <strong>agent-scale</strong>.</p>
+
+<p>Nello stesso giorno le <strong>stacked pull requests</strong> diventano Generally Available: una modifica grande può essere spezzata in PR piccole e dipendenti, revisionabili e mergiabili come uno stack. GitHub afferma che i repository che le usano hanno visto un miglioramento nei tempi di merge e nel volume di codice integrato.</p>
+
+<p><strong>Perché conta:</strong> gli strumenti stanno iniziando ad adattarsi strutturalmente al fatto che un singolo sviluppatore possa generare molte più modifiche con gli agenti. <strong>Da provare:</strong> sì, soprattutto su refactoring grandi o lavori agentici che si possono dividere in passi autonomi.</p>
+
+<p><a href="https://github.blog/engineering/architecture-optimization/building-git-infrastructure-for-agent-scale-development/">GitHub: agent-scale infrastructure</a> · <a href="https://github.blog/changelog/2026-10-06-stacked-pull-requests-generally-available/">Stacked PR GA</a></p>
+
+<hr class="sep">
+
+<h2>5. Linux memoria compressa: Meta propone CRAM e Zswap riceve nuove ottimizzazioni</h2>
+
+<p>Meta ha presentato <strong>CRAM</strong>, un progetto di compressed RAM assistita dall’hardware che mira a mantenere accesso a livello di cacheline/byte pur usando memoria compressa. Secondo i dati mostrati al Linux Plumbers Conference, alcune letture possono avvicinarsi alle prestazioni della DRAM non compressa.</p>
+
+<p>In parallelo sono state pubblicate nuove patch per <strong>Zswap</strong> che separano meglio richieste di load e store per CPU, riducendo la contesa su mutex e request condivise. È un approccio simile al recente lavoro fatto su ZRAM.</p>
+
+<p><strong>Perché conta:</strong> con RAM costosa e modelli locali sempre più grandi, la gestione della memoria sta tornando al centro dello sviluppo Linux. <strong>Da seguire:</strong> molto. CRAM richiede supporto hardware, mentre le ottimizzazioni Zswap possono avere un impatto più diretto sui sistemi normali se verranno accettate upstream.</p>
+
+<p><a href="https://www.phoronix.com/news/Linux-CRAM-Compressed-RAM">CRAM: Phoronix</a> · <a href="https://www.phoronix.com/news/Linux-Better-Zswap-Performance">Zswap: Phoronix</a></p>
+
+<hr class="sep">
+
+<h2>6. Sicurezza: dodici nuove vulnerabilità in X.Org Server e XWayland</h2>
+
+<p>Sono state rese pubbliche <strong>dodici nuove vulnerabilità</strong> che interessano X.Org Server e XWayland: use-after-free, heap buffer overflow e accessi out-of-bounds in componenti XKB, GLX, XInput, RandR, XFixes e Glamor.</p>
+
+<p>Le versioni corrette indicate sono <strong>xorg-server 21.1.25</strong> e <strong>xwayland 24.1.14</strong>. Le falle sono state individuate con l’assistenza di strumenti AI dalla TrendAI Zero Day Initiative.</p>
+
+<p><strong>Perché conta:</strong> anche chi usa Wayland può avere XWayland attivo per applicazioni X11. <strong>Da fare:</strong> su Linux aggiornerei appena la distribuzione rende disponibili i pacchetti corretti; non installerei manualmente X.Org fuori dal package manager.</p>
+
+<p><a href="https://www.phoronix.com/news/X.Org-12-New-Issues-2026">Fonte: Phoronix</a></p>
+
+<hr class="sep">
+
+<h2>7. AMD P-State: patch pensate anche per Steam Deck e 1% low nel gaming</h2>
+
+<p>David Vernet di Meta ha presentato il lavoro su una nuova euristica di boost per CPU recentemente occupate usando <strong>AMD P-State/EPP</strong>. Nei test precedenti alcune patch avevano mostrato miglioramenti molto rilevanti negli 1% low; il nuovo design sta evolvendo verso un meccanismo a livello di governor, con l’idea di poter ricevere anche hint da Wine/Proton.</p>
+
+<p><strong>Perché conta:</strong> il frame rate medio non racconta tutta la fluidità: ridurre i frame-time peggiori può essere più percepibile di qualche FPS in più. <strong>Da seguire:</strong> sì per Steam Deck e sistemi Ryzen; è ancora lavoro in sviluppo, quindi non va letto come un +31% garantito nei giochi.</p>
+
+<p><a href="https://www.phoronix.com/news/Boost-Recently-Busy-CPUs">Fonte: Phoronix</a></p>
+
+<hr class="sep">
+
+<h2>8. ChatGPT ora accetta direttamente file audio</h2>
+
+<p>OpenAI ha aggiunto il supporto agli <strong>upload audio in ChatGPT</strong> per gli abbonamenti a pagamento e i workspace. È possibile caricare una registrazione e chiedere trascrizione, riassunto, estrazione di informazioni o trasformazione in note strutturate.</p>
+
+<p><strong>Perché conta:</strong> è una funzione molto pratica per usare ChatGPT come assistente personale: riunioni, appunti vocali, interviste e memo possono entrare direttamente nella conversazione senza passare prima da un servizio di trascrizione separato. <strong>Da provare:</strong> sì; OpenAI avverte che accuratezza e disponibilità possono variare per lingua, regione, client e modello.</p>
+
+<p><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes">Fonte primaria: ChatGPT Release Notes</a></p>
+
+<hr class="sep">
+
+<section class="watch">
+<h2>Da tenere d'occhio</h2>
+
+<p><strong>Mistral Large 4</strong> — la prova vera arriverà quando usciranno i pesi: 49B attivi sono tanti, ma molto più gestibili di 1T pienamente denso e potrebbero aprire scenari interessanti su server locali.</p>
+
+<p><strong>Agent-scale GitHub</strong> — è un segnale importante: non si stanno adattando solo gli IDE, ma anche l’infrastruttura Git sottostante al nuovo volume di lavoro generato dagli agenti.</p>
+
+<p><strong>CRAM</strong> — se l’hardware per memoria compressa diventerà comune, potrebbe essere un cambiamento architetturale molto più profondo di ZRAM/Zswap.</p>
+
+<p><strong>X.Org/XWayland security</strong> — dodici CVE in un colpo solo sono un altro motivo per mantenere aggiornato anche lo stack XWayland su desktop Wayland.</p>
+</section>
+
+</body>
+</html>
