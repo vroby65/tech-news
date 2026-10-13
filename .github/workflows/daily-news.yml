@@ -9,7 +9,7 @@ on:
       - ".github/workflows/daily-news.yml"
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -33,22 +33,49 @@ jobs:
           from pathlib import Path
           import re
 
-          archives = sorted(Path("docs/archive").glob("*.html"))
+          archives = sorted(Path("docs/archive").glob("????-??-??.html"))
           if not archives:
               raise SystemExit("Nessun archivio trovato")
 
           latest = archives[-1]
           html = latest.read_text(encoding="utf-8")
           html = html.replace("../favicon.png", "favicon.png")
-          html = re.sub(
-              r'<nav class="archive">.*?</nav>',
-              f'<nav class="archive"><a href="archive/{latest.name}">Archivio {latest.stem}</a></nav>',
-              html,
-              flags=re.S,
+
+          links = " · ".join(
+              f'<a href="archive/{item.name}">{item.stem}</a>'
+              for item in reversed(archives[-10:])
           )
+          nav = (
+              '<nav class="archive" aria-label="Edizioni recenti">'
+              f'<strong>Archivio:</strong> {links}</nav>'
+          )
+          html, matches = re.subn(
+              r'<nav\b[^>]*>.*?</nav>',
+              lambda match: nav,
+              html,
+              count=1,
+              flags=re.S | re.I,
+          )
+          if not matches:
+              if "</body>" not in html:
+                  raise SystemExit("Archivio HTML privo di </body>")
+              html = html.replace("</body>", nav + "</body>", 1)
+
           Path("docs/index.html").write_text(html, encoding="utf-8")
-          print(f"Promosso {latest} -> docs/index.html per il deploy")
+          print(f"Promosso {latest} -> docs/index.html")
           PY
+
+      - name: Commit homepage to repository
+        run: |
+          if git diff --quiet -- docs/index.html; then
+            echo "docs/index.html è già aggiornata"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/index.html
+          git commit -m "Update Tech News homepage from latest archive [skip ci]"
+          git push origin HEAD:main
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
