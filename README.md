@@ -21,6 +21,6 @@ Rassegna tecnologica quotidiana automatica, pubblicata alle **06:00 Europe/Rome*
 
 Il workflow è programmato alle 06:00 nel fuso `Europe/Rome`.
 
-## Fonti
+## Fonti  
 
 Le fonti sono configurate in `sources.json` e possono essere modificate liberamente.
